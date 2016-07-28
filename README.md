@@ -1,1 +1,1 @@
-# TeamBacardi
+# TeamBacardi JS UI & DOM Teamwork
