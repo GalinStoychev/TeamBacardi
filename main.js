@@ -60,7 +60,7 @@
                 _this.spriteWidth,
                 _this.spriteHeight);
         };
-
+        return _this;
     }
     function FallingObject(options) {
         //context.fillText(text,x,y,maxWidth);
@@ -80,8 +80,9 @@
                 _this.y,
                 _this.maxWidth
             );
-     
+
         };
+        return _this;
     }
 
     var heroImage = new Image();
@@ -107,7 +108,7 @@
         y: 20,
 
     });
-     var fallingNumber2 = new FallingObject({
+    var fallingNumber2 = new FallingObject({
         context: ctx,
         text: "BBB",
         x: 20,
@@ -139,9 +140,10 @@
                 hero.startingFrame_X = heroProperties.rightStartingFrame_X;
             }
         }
-         
-     
+
+
         hero.render();
+        window.requestAnimationFrame(mainLoop);
     }
     window.addEventListener('keydown', function (el) {
 
@@ -164,9 +166,7 @@
 
     }, false);
 
-
-    setInterval(mainLoop, 1000 / 60);
-
-
+    mainLoop();
+  
 }
     ());
