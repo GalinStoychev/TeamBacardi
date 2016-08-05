@@ -8,7 +8,8 @@
         leftArrow = 37,
         rightArrow = 39,
         starting=Math.random()*(screenWidth*0.9),
-        result=0;
+        result=0,
+        imgNum;
 
     canvas.width = screenWidth;
     canvas.height = screenHeight;
@@ -136,7 +137,15 @@
     });
 
     var oneImage = new Image();
-    oneImage.src = 'images/divide.png';
+    var positive = Math.floor(Math.random());
+    if (positive) {
+      imgNum=Math.round(12*Math.random());
+      oneImage.src=fallingObject.imageProperties.positive[imgNum]
+    } else {
+      imgNum=Math.round(12*Math.random());
+      oneImage.src=fallingObject.imageProperties.negative[imgNum]
+    }
+
 
     var one = new FallingSprite({
         context: ctx,
@@ -154,8 +163,9 @@
 
 
     function Start() {
-      ctx.font="15px Arial";
-      ctx.fillText('Result: '+result,screenWidth*0.85, screenHeight*0.05 );
+
+      ctx.font="14px  sans-serif";
+      ctx.fillText('RESULT: '+result,screenWidth*0.85, screenHeight*0.05 );
         one.render(0);
         one.spin();
         one.gravity(1);
@@ -165,6 +175,15 @@
         var isCollided= Collision(hero,one);
 
         if (isCollided) {
+          positive = Math.round(Math.random());
+          if (positive) {
+            imgNum=Math.round(12*Math.random());
+            oneImage.src=fallingObject.imageProperties.positive[imgNum]
+          } else {
+            imgNum=Math.round(12*Math.random());
+            oneImage.src=fallingObject.imageProperties.negative[imgNum]
+          }
+
           starting=Math.random()*(screenWidth*0.9);
           one = new FallingSprite({
               context: ctx,
@@ -206,7 +225,7 @@
         //window.requestAnimationFrame(Start);
     }
 
-    setInterval(Start, 1000 / 30);
+    setInterval(Start, 500 / 30);
 
     window.addEventListener('keydown', function (el) {
 
@@ -238,6 +257,7 @@
             hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
               ctx.clearRect(obj.sprite_X,obj.sprite_Y,obj.spriteWidth,obj.spriteHeight);
             //obj.remove();
+
             return true;
         }
     return false;
