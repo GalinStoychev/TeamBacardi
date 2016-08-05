@@ -266,6 +266,9 @@
 // console.log(result);
             return true;
         }
+        if (obj.sprite_Y>=screenHeight) {
+          return true;
+        }
     return false;
     }
 }
