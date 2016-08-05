@@ -7,7 +7,8 @@
         screenHeight = 480,
         leftArrow = 37,
         rightArrow = 39,
-        starting=Math.random()*(screenWidth*0.9);
+        starting=Math.random()*(screenWidth*0.9),
+        result=0;
 
     canvas.width = screenWidth;
     canvas.height = screenHeight;
@@ -153,6 +154,8 @@
 
 
     function Start() {
+      ctx.font="15px Arial";
+      ctx.fillText('Result: '+result,screenWidth*0.85, screenHeight*0.05 );
         one.render(0);
         one.spin();
         one.gravity(1);
@@ -178,7 +181,6 @@
 
 
         }
-        console.log(one.sprite_Y);
 
         if (heroProperties.left) {
             if (hero.sprite_X > 0) {
