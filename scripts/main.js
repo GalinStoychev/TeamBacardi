@@ -149,7 +149,7 @@
         value = fallingObject.imageProperties.value[imgNum];
     }
 
-console.log(oneImage.src);
+
     var one = new FallingSprite({
         context: ctx,
         image: oneImage,
@@ -167,7 +167,7 @@ console.log(oneImage.src);
 
     function Start() {
 
-      ctx.font="25px  sans-serif";
+      ctx.font="18px  sans-serif";
       ctx.fillText('RESULT: '+result,screenWidth*0.65, screenHeight*0.05 );
         one.render(0);
         one.spin();
