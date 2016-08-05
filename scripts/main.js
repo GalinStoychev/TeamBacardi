@@ -1,6 +1,22 @@
 (function () {
     'use strict';
 
+    Array.prototype.shuffle = function () {
+        var self = this,
+            n = self.length,
+            i,
+            j,
+            tmp;
+
+        for (i = n - 1; i > 0; i -= 1) {
+            j = Math.floor(Math.random() * (i + 1));
+            tmp = self[i];
+            self[i] = self[j];
+            self[j] = tmp;
+        }
+        return self;
+    };
+
     var canvas = document.getElementById("main"),
         ctx = canvas.getContext('2d'),
         screenWidth = 640,
@@ -31,35 +47,32 @@
         left: false,
         right: false
     };
-
     var fallingObject = {
         numberOfFrames: 12,
         frameWidth: 150,
         frameHeight: 202,
         imageProperties: {
             positive: ['images/zero.png', 'images/1blue.png',
-                       'images/2blue.png', 'images/3blue.png',
-                       'images/4blue.png', 'images/5blue.png',
-                       'images/6blue.png', 'images/7blue.png',
-                       'images/8blue.png', 'images/9blue.png',
-                       'images/divide.png', 'images/multiply.png'],
+                'images/2blue.png', 'images/3blue.png',
+                'images/4blue.png', 'images/5blue.png',
+                'images/6blue.png', 'images/7blue.png',
+                'images/8blue.png', 'images/9blue.png',
+                'images/divide.png', 'images/multiply.png'],
             negative: ['images/zero.png', 'images/1red.png',
-                       'images/2red.png', 'images/3red.png',
-                       'images/4red.png', 'images/5red.png',
-                       'images/6red.png', 'images/7red.png',
-                       'images/8red.png', 'images/9red.png',
-                       'images/divide.png', 'images/multiply.png'],
+                'images/2red.png', 'images/3red.png',
+                'images/4red.png', 'images/5red.png',
+                'images/6red.png', 'images/7red.png',
+                'images/8red.png', 'images/9red.png',
+                'images/divide.png', 'images/multiply.png'],
             value: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*']
         }
     };
 
-
-
     function Sprite(options) {
         var self = this;
 
+
         self.context = options.context;
-        self.width = options.width;
         self.height = options.height;
         self.image = options.image;
         self.startingFrame_X = options.startingFrame_X;
@@ -74,17 +87,25 @@
         self.remove = function () {
             self.stop = true;
         };
-        self.render = function (delta) {
+
+        var lastX = self.sprite_X,
+            lastY = self.sprite_Y;
+
+        self.render = function () {
+            
             //Clear the sprite
             self.context.clearRect(
-                self.sprite_X - delta,
-                self.sprite_Y,
-                self.spriteWidth + delta,
+                lastX,
+                lastY,
+                self.spriteWidth,
                 self.spriteHeight);
 
+            lastX = self.sprite_X;
+            lastY = self.sprite_Y;
             if (self.stop) {
                 return;
-            }
+            }    
+
             //Draw the sprite
             self.context.drawImage(
                 self.image,
@@ -103,20 +124,26 @@
     function FallingSprite(options) {
         Sprite.call(this, options);
     }
+    var loopsCount = 0;
     FallingSprite.prototype = {
-        spin: function () {
-            this.startingFrame_X += fallingObject.frameWidth;
-            if (this.startingFrame_X >= fallingObject.frameWidth * fallingObject.numberOfFrames) {
-                this.startingFrame_X = 0;
+        spin: function (speed) {
+            loopsCount += 1;
+            if (loopsCount >= speed) {
+                this.startingFrame_X += fallingObject.frameWidth;
+                if (this.startingFrame_X >= fallingObject.frameWidth * fallingObject.numberOfFrames) {
+                    this.startingFrame_X = 0;
+                }
+                loopsCount = 0;
             }
         },
+
         gravity: function (speed) {
             this.sprite_Y += speed;
         }
     };
 
 
-
+    //<img src=""/>
     var heroImage = new Image();
     heroImage.src = heroProperties.imageLocation;
 
@@ -134,7 +161,7 @@
     });
 
     var oneImage = new Image();
-    oneImage.src = 'images/divide.png';
+    oneImage.src = 'images/1blue.png';
 
     var one = new FallingSprite({
         context: ctx,
@@ -150,15 +177,14 @@
     });
 
 
-
     function Start() {
-        one.render(0);
-        one.spin();
-        one.gravity(1);
-
+        
+        one.render();
+        one.spin(4);
+        one.gravity(5);
         hero.render(heroProperties.speed);
-
         Collision(hero, one);
+
         if (heroProperties.left) {
             if (hero.sprite_X > 0) {
                 hero.sprite_X -= heroProperties.speed;
@@ -180,9 +206,9 @@
             }
         }
 
-        //window.requestAnimationFrame(Start);
+        window.requestAnimationFrame(Start);
     }
-    setInterval(Start, 1000 / 30);
+    //setInterval(Start, 1000 / 30);
 
     window.addEventListener('keydown', function (el) {
 
@@ -205,7 +231,7 @@
 
     }, false);
 
-    //mainLoop();
+    Start();
 
 }
     ());
@@ -217,12 +243,19 @@ function Random(range) {
 }
 
 function Collision(hero, obj) {
-
     if (hero.sprite_X < obj.sprite_X + obj.spriteWidth &&
         hero.sprite_X + hero.spriteWidth > obj.sprite_X &&
         hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
         hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
         obj.remove();
     }
-
 }
+
+function FloorCollision(floor, obj) {
+
+    if (obj.sprite_Y >= floor.height) {
+        obj.remove();
+    }
+}
+
+
