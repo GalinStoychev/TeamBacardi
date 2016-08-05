@@ -24,6 +24,8 @@
         leftArrow = 37,
         rightArrow = 39;
 
+    
+
     canvas.width = screenWidth;
     canvas.height = screenHeight;
 
@@ -41,7 +43,7 @@
         frameHeight: 100,
         imageLocation: 'images/hero.png',
         x: 310,
-        y: 390,
+        y: 270,
         up: false,
         down: false,
         left: false,
@@ -71,7 +73,6 @@
     function Sprite(options) {
         var self = this;
 
-
         self.context = options.context;
         self.height = options.height;
         self.image = options.image;
@@ -94,11 +95,12 @@
         self.render = function () {
             
             //Clear the sprite
-            self.context.clearRect(
-                lastX,
-                lastY,
-                self.spriteWidth,
-                self.spriteHeight);
+            //Useless after adding the background
+            // self.context.clearRect(
+            //     lastX,
+            //     lastY,
+            //     self.spriteWidth,
+            //     self.spriteHeight);
 
             lastX = self.sprite_X;
             lastY = self.sprite_Y;
@@ -143,8 +145,8 @@
     };
 
 
-    //<img src=""/>
-    var heroImage = new Image();
+    
+    var heroImage = new Image(); //replace with img.src;
     heroImage.src = heroProperties.imageLocation;
 
     var hero = new Sprite({
@@ -159,8 +161,7 @@
         spriteWidth: heroProperties.frameWidth,
         spriteHeight: heroProperties.frameHeight,
     });
-
-    var oneImage = new Image();
+    var oneImage = new Image(); //replace with img.src;
     oneImage.src = 'images/1blue.png';
 
     var one = new FallingSprite({
@@ -176,9 +177,19 @@
         spriteHeight: 40
     });
 
-
+  var img =  document.getElementById('bgrd');
     function Start() {
-        
+           ctx.drawImage(
+               img,
+                0,
+                0,
+                img.width,
+                img.height,
+                0,
+                0,
+                screenWidth,
+                screenHeight);
+
         one.render();
         one.spin(4);
         one.gravity(5);
@@ -242,17 +253,17 @@ function Random(range) {
 
 }
 
-function Collision(hero, obj) {
+function Collision(hero, obj) { 
     if (hero.sprite_X < obj.sprite_X + obj.spriteWidth &&
         hero.sprite_X + hero.spriteWidth > obj.sprite_X &&
         hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
         hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
         obj.remove();
+        //implement calculation logic
     }
 }
 
 function FloorCollision(floor, obj) {
-
     if (obj.sprite_Y >= floor.height) {
         obj.remove();
     }
