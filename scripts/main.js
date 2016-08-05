@@ -1,19 +1,20 @@
 (function () {
     'use strict';
 
-    var canvas = document.getElementById("main");
-    var ctx = canvas.getContext('2d');
-    var screenWidth = 640;
-    var screenHeight = 480;
+    var canvas = document.getElementById("main"),
+        ctx = canvas.getContext('2d'),
+        screenWidth = 640,
+        screenHeight = 480,
+        leftArrow = 37,
+        rightArrow = 39;
+
     canvas.width = screenWidth;
     canvas.height = screenHeight;
-    var speed = 10;
-    var deltaFrame = 105;
-    var leftArrow = 37;
-    var rightArrow = 39;
 
     var heroProperties = {
         numberOfFrames: 6,
+        deltaFrame: 105,
+        speed: 10,
         leftStartingFrame_X: 0,
         leftStartingFrame_Y: 0,
         rightStartingFrame_X: 0,
@@ -30,14 +31,26 @@
         left: false,
         right: false
     };
+
     var fallingObject = {
         numberOfFrames: 12,
-        startingFrame_X: 0,
-        startingFrame_Y: 0,
         frameWidth: 150,
         frameHeight: 202,
-        x: 0,
-        y: 0,
+        imageProperties: {
+            positive: ['images/zero.png', 'images/1blue.png',
+                       'images/2blue.png', 'images/3blue.png',
+                       'images/4blue.png', 'images/5blue.png',
+                       'images/6blue.png', 'images/7blue.png',
+                       'images/8blue.png', 'images/9blue.png',
+                       'images/divide.png', 'images/multiply.png'],
+            negative: ['images/zero.png', 'images/1red.png',
+                       'images/2red.png', 'images/3red.png',
+                       'images/4red.png', 'images/5red.png',
+                       'images/6red.png', 'images/7red.png',
+                       'images/8red.png', 'images/9red.png',
+                       'images/divide.png', 'images/multiply.png'],
+            value: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*']
+        }
     };
 
 
@@ -58,18 +71,16 @@
         self.spriteWidth = options.spriteWidth;
         self.spriteHeight = options.spriteHeight;
 
-
-
         self.remove = function () {
             self.stop = true;
         };
-        self.render = function () {
+        self.render = function (delta) {
             //Clear the sprite
             self.context.clearRect(
-                self.sprite_X - speed,
+                self.sprite_X - delta,
                 self.sprite_Y,
-                self.spriteWidth + speed,
-                self.spriteHeight + speed);
+                self.spriteWidth + delta,
+                self.spriteHeight);
 
             if (self.stop) {
                 return;
@@ -86,10 +97,6 @@
                 self.spriteWidth,
                 self.spriteHeight);
         };
-        // self.spin = function () {
-
-        // };
-
 
         return self;
     }
@@ -97,7 +104,6 @@
         Sprite.call(this, options);
     }
     FallingSprite.prototype = {
-
         spin: function () {
             this.startingFrame_X += fallingObject.frameWidth;
             if (this.startingFrame_X >= fallingObject.frameWidth * fallingObject.numberOfFrames) {
@@ -127,12 +133,12 @@
         spriteHeight: heroProperties.frameHeight,
     });
 
-    var oneImage1 = new Image();
-    oneImage1.src = 'images/1blue.png';
+    var oneImage = new Image();
+    oneImage.src = 'images/divide.png';
 
     var one = new FallingSprite({
         context: ctx,
-        image: oneImage1,
+        image: oneImage,
         startingFrame_X: 0,
         startingFrame_Y: 0,
         frameWidth: 150,
@@ -142,53 +148,41 @@
         spriteWidth: 30,
         spriteHeight: 40
     });
-    var one2 = new FallingSprite({
-        context: ctx,
-        image: oneImage1,
-        startingFrame_X: 0,
-        startingFrame_Y: 0,
-        frameWidth: 150,
-        frameHeight: 202,
-        sprite_X: 150,
-        sprite_Y: 75,
-        spriteWidth: 30,
-        spriteHeight: 40
-    });
+
 
 
     function Start() {
-        one.render();
+        one.render(0);
         one.spin();
         one.gravity(1);
-        one2.render();
-        one2.spin();
-        one2.gravity(1);
-        hero.render();
 
+        hero.render(heroProperties.speed);
+
+        Collision(hero, one);
         if (heroProperties.left) {
             if (hero.sprite_X > 0) {
-                hero.sprite_X -= speed;
+                hero.sprite_X -= heroProperties.speed;
             }
-            hero.startingFrame_X += deltaFrame;
+            hero.startingFrame_X += heroProperties.deltaFrame;
             hero.startingFrame_Y = heroProperties.leftStartingFrame_Y;
-            if (hero.startingFrame_X >= deltaFrame * heroProperties.numberOfFrames) {
+            if (hero.startingFrame_X >= heroProperties.deltaFrame * heroProperties.numberOfFrames) {
                 hero.startingFrame_X = heroProperties.leftStartingFrame_X;
             }
         }
         if (heroProperties.right) {
             if (hero.sprite_X < (screenWidth - hero.spriteWidth)) {
-                hero.sprite_X += speed;
+                hero.sprite_X += heroProperties.speed;
             }
-            hero.startingFrame_X += deltaFrame;
+            hero.startingFrame_X += heroProperties.deltaFrame;
             hero.startingFrame_Y = heroProperties.rightStartingFrame_Y;
-            if (hero.startingFrame_X >= deltaFrame * heroProperties.numberOfFrames) {
+            if (hero.startingFrame_X >= heroProperties.deltaFrame * heroProperties.numberOfFrames) {
                 hero.startingFrame_X = heroProperties.leftStartingFrame_X;
             }
         }
 
         //window.requestAnimationFrame(Start);
     }
-    setInterval(Start, 1000 / 60);
+    setInterval(Start, 1000 / 30);
 
     window.addEventListener('keydown', function (el) {
 
@@ -216,6 +210,19 @@
 }
     ());
 
-var Random = function (range) {
+function Random(range) {
+
     return Math.floor(Math.random() * range);
-};
+
+}
+
+function Collision(hero, obj) {
+
+    if (hero.sprite_X < obj.sprite_X + obj.spriteWidth &&
+        hero.sprite_X + hero.spriteWidth > obj.sprite_X &&
+        hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
+        hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
+        obj.remove();
+    }
+
+}
