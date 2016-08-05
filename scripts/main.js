@@ -9,7 +9,8 @@
         rightArrow = 39,
         starting=Math.random()*(screenWidth*0.9),
         result=0,
-        imgNum;
+        imgNum,
+        value;
 
     canvas.width = screenWidth;
     canvas.height = screenHeight;
@@ -139,14 +140,16 @@
     var oneImage = new Image();
     var positive = Math.floor(Math.random());
     if (positive) {
-      imgNum=Math.round(12*Math.random());
+      imgNum=Math.floor(12*Math.random());
       oneImage.src=fallingObject.imageProperties.positive[imgNum]
+      value = -fallingObject.imageProperties.value[imgNum];
     } else {
-      imgNum=Math.round(12*Math.random());
+      imgNum=Math.floor(12*Math.random());
       oneImage.src=fallingObject.imageProperties.negative[imgNum]
+        value = fallingObject.imageProperties.value[imgNum];
     }
 
-
+console.log(oneImage.src);
     var one = new FallingSprite({
         context: ctx,
         image: oneImage,
@@ -164,8 +167,8 @@
 
     function Start() {
 
-      ctx.font="14px  sans-serif";
-      ctx.fillText('RESULT: '+result,screenWidth*0.85, screenHeight*0.05 );
+      ctx.font="25px  sans-serif";
+      ctx.fillText('RESULT: '+result,screenWidth*0.65, screenHeight*0.05 );
         one.render(0);
         one.spin();
         one.gravity(1);
@@ -177,11 +180,13 @@
         if (isCollided) {
           positive = Math.round(Math.random());
           if (positive) {
-            imgNum=Math.round(12*Math.random());
+            imgNum=Math.floor(12*Math.random());
             oneImage.src=fallingObject.imageProperties.positive[imgNum]
+            value = -fallingObject.imageProperties.value[imgNum];
           } else {
-            imgNum=Math.round(12*Math.random());
+            imgNum=Math.floor(12*Math.random());
             oneImage.src=fallingObject.imageProperties.negative[imgNum]
+              value = fallingObject.imageProperties.value[imgNum];
           }
 
           starting=Math.random()*(screenWidth*0.9);
@@ -257,13 +262,14 @@
             hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
               ctx.clearRect(obj.sprite_X,obj.sprite_Y,obj.spriteWidth,obj.spriteHeight);
             //obj.remove();
-
+// result+=value;
+// console.log(result);
             return true;
         }
     return false;
     }
 }
-    ());
+   ());
 
 function Random(range) {
 
