@@ -6,7 +6,8 @@
         screenWidth = 640,
         screenHeight = 480,
         leftArrow = 37,
-        rightArrow = 39;
+        rightArrow = 39,
+        starting=Math.random()*(screenWidth*0.9);
 
     canvas.width = screenWidth;
     canvas.height = screenHeight;
@@ -143,7 +144,7 @@
         startingFrame_Y: 0,
         frameWidth: 150,
         frameHeight: 202,
-        sprite_X: 150,
+        sprite_X: starting,
         sprite_Y: 40,
         spriteWidth: 30,
         spriteHeight: 40
@@ -158,7 +159,27 @@
 
         hero.render(heroProperties.speed);
 
-        Collision(hero, one);
+        var isCollided= Collision(hero,one);
+
+        if (isCollided) {
+          starting=Math.random()*(screenWidth*0.9);
+          one = new FallingSprite({
+              context: ctx,
+              image: oneImage,
+              startingFrame_X: 0,
+              startingFrame_Y: 0,
+              frameWidth: 150,
+              frameHeight: 202,
+              sprite_X: starting,
+              sprite_Y: 40,
+              spriteWidth: 30,
+              spriteHeight: 40
+          });
+
+
+        }
+        console.log(one.sprite_Y);
+
         if (heroProperties.left) {
             if (hero.sprite_X > 0) {
                 hero.sprite_X -= heroProperties.speed;
@@ -182,6 +203,7 @@
 
         //window.requestAnimationFrame(Start);
     }
+
     setInterval(Start, 1000 / 30);
 
     window.addEventListener('keydown', function (el) {
@@ -206,23 +228,23 @@
     }, false);
 
     //mainLoop();
+    function Collision(hero, obj) {
 
+        if (hero.sprite_X < obj.sprite_X + obj.spriteWidth &&
+            hero.sprite_X + hero.spriteWidth > obj.sprite_X &&
+            hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
+            hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
+              ctx.clearRect(obj.sprite_X,obj.sprite_Y,obj.spriteWidth,obj.spriteHeight);
+            //obj.remove();
+            return true;
+        }
+    return false;
+    }
 }
     ());
 
 function Random(range) {
 
     return Math.floor(Math.random() * range);
-
-}
-
-function Collision(hero, obj) {
-
-    if (hero.sprite_X < obj.sprite_X + obj.spriteWidth &&
-        hero.sprite_X + hero.spriteWidth > obj.sprite_X &&
-        hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
-        hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
-        obj.remove();
-    }
 
 }
