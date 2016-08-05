@@ -22,7 +22,11 @@
         screenWidth = 640,
         screenHeight = 480,
         leftArrow = 37,
-        rightArrow = 39;
+        rightArrow = 39,
+        starting=Math.random()*(screenWidth*0.9),
+        result=0,
+        imgNum,
+        value;
 
     
 
@@ -161,8 +165,24 @@
         spriteWidth: heroProperties.frameWidth,
         spriteHeight: heroProperties.frameHeight,
     });
+<<<<<<< HEAD
     var oneImage = new Image(); //replace with img.src;
     oneImage.src = 'images/1blue.png';
+=======
+
+    var oneImage = new Image();
+    var positive = Math.floor(Math.random());
+    if (positive) {
+      imgNum=Math.floor(12*Math.random());
+      oneImage.src=fallingObject.imageProperties.positive[imgNum]
+      value = -fallingObject.imageProperties.value[imgNum];
+    } else {
+      imgNum=Math.floor(12*Math.random());
+      oneImage.src=fallingObject.imageProperties.negative[imgNum]
+        value = fallingObject.imageProperties.value[imgNum];
+    }
+
+>>>>>>> 5f80bcddc638cf46ab558fb9e52275e489e92547
 
     var one = new FallingSprite({
         context: ctx,
@@ -171,7 +191,7 @@
         startingFrame_Y: 0,
         frameWidth: 150,
         frameHeight: 202,
-        sprite_X: 150,
+        sprite_X: starting,
         sprite_Y: 40,
         spriteWidth: 30,
         spriteHeight: 40
@@ -179,6 +199,7 @@
 
   var img =  document.getElementById('bgrd');
     function Start() {
+<<<<<<< HEAD
            ctx.drawImage(
                img,
                 0,
@@ -195,6 +216,47 @@
         one.gravity(5);
         hero.render(heroProperties.speed);
         Collision(hero, one);
+=======
+
+      ctx.font="18px  sans-serif";
+      ctx.fillText('RESULT: '+result,screenWidth*0.65, screenHeight*0.05 );
+        one.render(0);
+        one.spin();
+        one.gravity(1);
+
+        hero.render(heroProperties.speed);
+
+        var isCollided= Collision(hero,one);
+
+        if (isCollided) {
+          positive = Math.round(Math.random());
+          if (positive) {
+            imgNum=Math.floor(12*Math.random());
+            oneImage.src=fallingObject.imageProperties.positive[imgNum]
+            value = -fallingObject.imageProperties.value[imgNum];
+          } else {
+            imgNum=Math.floor(12*Math.random());
+            oneImage.src=fallingObject.imageProperties.negative[imgNum]
+              value = fallingObject.imageProperties.value[imgNum];
+          }
+
+          starting=Math.random()*(screenWidth*0.9);
+          one = new FallingSprite({
+              context: ctx,
+              image: oneImage,
+              startingFrame_X: 0,
+              startingFrame_Y: 0,
+              frameWidth: 150,
+              frameHeight: 202,
+              sprite_X: starting,
+              sprite_Y: 40,
+              spriteWidth: 30,
+              spriteHeight: 40
+          });
+
+
+        }
+>>>>>>> 5f80bcddc638cf46ab558fb9e52275e489e92547
 
         if (heroProperties.left) {
             if (hero.sprite_X > 0) {
@@ -219,7 +281,12 @@
 
         window.requestAnimationFrame(Start);
     }
+<<<<<<< HEAD
     //setInterval(Start, 1000 / 30);
+=======
+
+    setInterval(Start, 500 / 30);
+>>>>>>> 5f80bcddc638cf46ab558fb9e52275e489e92547
 
     window.addEventListener('keydown', function (el) {
 
@@ -242,16 +309,38 @@
 
     }, false);
 
+<<<<<<< HEAD
     Start();
 
+=======
+    //mainLoop();
+    function Collision(hero, obj) {
+
+        if (hero.sprite_X < obj.sprite_X + obj.spriteWidth &&
+            hero.sprite_X + hero.spriteWidth > obj.sprite_X &&
+            hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
+            hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
+              ctx.clearRect(obj.sprite_X,obj.sprite_Y,obj.spriteWidth,obj.spriteHeight);
+            //obj.remove();
+// result+=value;
+// console.log(result);
+            return true;
+        }
+        if (obj.sprite_Y>=screenHeight) {
+          return true;
+        }
+    return false;
+    }
+>>>>>>> 5f80bcddc638cf46ab558fb9e52275e489e92547
 }
-    ());
+   ());
 
 function Random(range) {
 
     return Math.floor(Math.random() * range);
 
 }
+<<<<<<< HEAD
 
 function Collision(hero, obj) { 
     if (hero.sprite_X < obj.sprite_X + obj.spriteWidth &&
@@ -270,3 +359,5 @@ function FloorCollision(floor, obj) {
 }
 
 
+=======
+>>>>>>> 5f80bcddc638cf46ab558fb9e52275e489e92547
