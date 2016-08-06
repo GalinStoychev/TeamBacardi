@@ -3,6 +3,11 @@
             hero.sprite_X + hero.spriteWidth > obj.sprite_X &&
             hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
             hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
+
+            if (obj.value===0) {
+              level--;
+            }
+
             obj.remove();
             //implement calculation logic
 

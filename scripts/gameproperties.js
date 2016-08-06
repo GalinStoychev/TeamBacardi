@@ -11,7 +11,7 @@
             spawns = 0,
             spawnTimesPerLevel=10,
             intervalOfSpawn=100,
-            timePassed=0;
+            timePassed=intervalOfSpawn;
 
 
         canvas.width = screenWidth;

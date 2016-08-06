@@ -25,29 +25,28 @@ function Start() {
             screenWidth,
             screenHeight);
 
-          if (spawns===spawnTimesPerLevel) {
+        if (spawns===spawnTimesPerLevel) {
             level++;
             spawns=0;
           }
 
-          if (timePassed===intervalOfSpawn) {
+        if (timePassed===intervalOfSpawn) {
             for (var i = 0; i < level; i+=1) {
               numbers.push(createNumber());
-              console.log(i);
             }
             spawns++;
             timePassed=0;
           }
           timePassed++;
 
-
-  //draws each number and checks for collision
         var hasCollision;
         for (var i = 0; i < numbers.length; i+=1) {
+          //draws
           numbers[i].render();
           numbers[i].gravity(5);
           numbers[i].spin(3);
 
+          //checks for collision
           hasCollision= Collision(hero, numbers[i]);
           if (hasCollision) {
           numbers.splice(i,1);
