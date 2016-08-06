@@ -17,7 +17,6 @@
                 }
                 obj.value="+";
               }
-console.log(hero.value);
             }
 
 
