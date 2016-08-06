@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Sprite Animation</title>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="scripts/gameproperties.js"></script>
-     <script src="scripts/sprites.js"></script>
-     <script src="scripts/main.js"></script>
+
 </head>
+
 <body>
 
-        <canvas id="main" style="border:1px solid black;z-index:5;position:absolute;"></canvas>
-        <canvas id="background" style="border:1px solid black;z-index:0;position:absolute;"></canvas>
-        <img src="images/background.jpg" id="bgrd" style="display:none;" />
-        <img src="images/hero.png" id="hero" style="display:none;" />
-        
-       
+    <canvas id="main" style="border:1px solid black;z-index:5;position:absolute;"></canvas>
+    <img src="images/background.jpg" id="background1" style="display:none;" />
+    <img src="images/hero.png" id="heroImage" style="display:none;" />
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="scripts/gameProperties.js"></script>
+     <script src="scripts/createBackground.js"></script>
+    <script src="scripts/sprites.js"></script>
+    <script src="scripts/hero.js"></script>
+    <script src="scripts/collision.js"></script>
+    <script src="scripts/start.js"></script>
 </body>
+
 </html>
