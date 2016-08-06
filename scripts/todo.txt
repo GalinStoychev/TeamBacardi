@@ -1,19 +1,18 @@
 // ------------
-- spawnNumber.js - create number with random value;
-- start.js + collision.js - calculate values
-- start.js - array of all numbers 
+- spawnNumber.js - create number with random value; DONE!
+- start.js + collision.js - calculate values DONE!
+- start.js - array of all numbers  DONE!
 // ------------
-- gravity - bounce 
+- gravity - bounce DONE!
 // ------------
 UI:
-- create lectors sprites
-- create backgrounds + functionality in start.js
-- start screen 
+- create lectors sprites DONE!
+- create backgrounds + functionality in start.js DONE!
+- start screen  DONE!
 - create score box
-- main.js - buttons events
+- main.js - buttons events DONE!
 
-- readme.md - explain game rulles
+- readme.md - explain game rulles DONE!
 
 
 - create video // when the project is finished
-
