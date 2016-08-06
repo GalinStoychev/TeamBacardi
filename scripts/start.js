@@ -42,17 +42,20 @@ function Start() {
           numbers[i].render();
           numbers[i].gravity(5);
           numbers[i].spin(3);
-          if (typeof sign !== "string") {
-            sign="+";
-          }
+
 
           if (hero.value<0) {
             return;
           }
           //checks for collision
-          hasCollision= Collision(hero, numbers[i],sign);
+          hasCollision= Collision(hero, numbers[i], sign);
+
           if (hasCollision) {
             sign=numbers[i].value;
+            if (typeof sign !== "string") {
+              sign="+";
+            }          
+
             numbers.splice(i,1);
           }
         }

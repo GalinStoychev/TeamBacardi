@@ -9,16 +9,18 @@
             } else if (typeof obj.value !== "string"){
               if (sign==="+") {
                 hero.value += obj.value;
-              } else if (sign==="%") {
-                hero.value /= obj.value;
-                console.log(hero.value /= obj.value);
-              } else if(sign==="*") {
+              } else {
+                if (sign==="/") {
+                  hero.value=Math.round(hero.value /= obj.value);
+                } else if(sign==="*") {
                   hero.value *= obj.value;
+                }
+                obj.value="+";
               }
-              obj.value="+";
+console.log(hero.value);
             }
 
-            
+
             obj.remove();
 
             return true;
