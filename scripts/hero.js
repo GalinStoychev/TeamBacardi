@@ -5,7 +5,7 @@ var heroProperties = {
             leftStartingFrame_X: 0,
             leftStartingFrame_Y: 0,
             rightStartingFrame_X: 0,
-            rightStartingFrame_Y: 105,
+            rightStartingFrame_Y: 105, 
             startingFrame_X: 0,
             startingFrame_Y: 0,
             frameWidth: 60,
