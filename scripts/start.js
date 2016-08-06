@@ -20,7 +20,9 @@ function Start() {
     //     sprite_Y: 0,        // const
     //     spriteWidth: 30,    // const
     //     spriteHeight: 40,   // const
-    //     value: 0 //random *
+    //     value: 0, //random *
+    //     deltaX: 1,
+    //     deltaY: 1
     // });
     function mainLoop() {
         // ctx.drawImage(img,

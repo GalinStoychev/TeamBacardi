@@ -13,6 +13,8 @@ function Sprite(options) {
     self.spriteWidth = options.spriteWidth;
     self.spriteHeight = options.spriteHeight;
     self.value = options.value;
+    self.deltaY = options.deltaY;
+    self.deltaX = options.deltaX;
 
     self.remove = function () {
         self.stop = true;
@@ -54,7 +56,7 @@ function heroSprite(options, heroProperties) {
     Sprite.call(this, options);
 
     var self = this;
-    
+
     self.move = function (direction, speed) {
 
         if (direction.left) {
@@ -96,10 +98,26 @@ function FallingSprite(options) {
             }
             loopsCount = 0;
         }
-    },
-    self.gravity = function (speed) {
-            this.sprite_Y += speed;
-            //to do - bouncing numbers
     };
+
+        self.gravity = function (speed) {
+        var canvas = $('#main');
+        var canvasWidth = canvas.attr('width');
+        canvasHeight = canvas.attr('height');
+
+        if ((this.sprite_X + speed) >= (canvasWidth - this.spriteWidth) ||
+            (this.sprite_X + speed) < 0) {
+            this.deltaX *= -1;
+        }
+
+        if ((this.sprite_Y + speed) >= (canvasHeight - this.spriteHeight) ||
+            (this.sprite_Y + speed) < 0) {
+            this.deltaY *= -1;
+        }
+
+        this.sprite_X += this.deltaX * speed;
+        this.sprite_Y += this.deltaY * speed;
+    };
+    
     return self;
 }
