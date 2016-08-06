@@ -6,7 +6,10 @@
             leftArrow = 37,
             rightArrow = 39,
             moveLeft = false,
-            moveRight = false;
+            moveRight = false,
+            level = 1,
+            count = 0,
+            spawnTimes=0;
 
         canvas.width = screenWidth;
         canvas.height = screenHeight;

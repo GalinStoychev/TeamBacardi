@@ -13,24 +13,7 @@ function Start() {
 
     var numbers=[];
 
-    // var num = new FallingSprite({
-    //     context: ctx,
-    //     image: oneImage, // random *
-    //     startingFrame_X: 0, // const
-    //     startingFrame_Y: 0, // const
-    //     frameWidth: 150,    // const
-    //     frameHeight: 202,   //const
-    //     sprite_X: 150, // random
-    //     sprite_Y: 0,        // const
-    //     spriteWidth: 30,    // const
-    //     spriteHeight: 40,   // const
-    //     value: 0, //random *
-    //     deltaX: 1,
-    //     deltaY: 1
-    // });
-
     function mainLoop() {
-
       //draws background
         ctx.drawImage(img,
             0,
@@ -43,24 +26,21 @@ function Start() {
             screenHeight);
   numbers.push(createNumber());
 
-    // var one = createNumber();
-
+  //draws each number and checks for collision
+    var hasCollision;
         for (var i = 0; i < numbers.length; i+=1) {
           numbers[i].render();
           numbers[i].gravity(5);
           numbers[i].spin(3);
 
-
-          Collision(hero, numbers[i]);
+          hasCollision= Collision(hero, numbers[i]);
+          if (hasCollision) {
+          numbers.splice(i,1);
+          }
         }
 
-        //
-
-
-      //  Collision(hero, one);
-
-
          hero.render(5);
+         
         if (moveLeft) {
             hero.move({ left: true }, 10);
         }

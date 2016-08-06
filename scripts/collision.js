@@ -5,9 +5,11 @@
             hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
             obj.remove();
             //implement calculation logic
+
+
             return true;
         }
-        
+
         return false;
     }
 

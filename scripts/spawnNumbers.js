@@ -27,7 +27,7 @@ function createNumber(){
    imgValue=imageProperties.values[imgNum];
  } else {
    var imgNum = Random(imageProperties.negative.length-1);
-   imgSrc = imageProperties.positive[imgNum];
+   imgSrc = imageProperties.negative[imgNum];
    if (typeof imageProperties.values[imgNum] === "string") {
      imgValue=imageProperties.values[imgNum];
    } else {
