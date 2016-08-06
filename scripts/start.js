@@ -6,43 +6,43 @@ function Start() {
     var hero = createHero();
 
 
-    // var oneImage = new Image(); //replace with img.src;
-    // oneImage.src = 'images/1blue.png';
+    var oneImage = new Image(); //replace with img.src;
+    oneImage.src = 'images/numbers/1blue.png';
 
-    // var one = new FallingSprite({
-    //     context: ctx,
-    //     image: oneImage, // random *
-    //     startingFrame_X: 0, // const
-    //     startingFrame_Y: 0, // const
-    //     frameWidth: 150,    // const
-    //     frameHeight: 202,   //const
-    //     sprite_X: 150, // random
-    //     sprite_Y: 0,        // const
-    //     spriteWidth: 30,    // const
-    //     spriteHeight: 40,   // const
-    //     value: 0, //random *
-    //     deltaX: 1,
-    //     deltaY: 1
-    // });
+    var one = new FallingSprite({
+        context: ctx,
+        image: oneImage, // random *
+        startingFrame_X: 0, // const
+        startingFrame_Y: 0, // const
+        frameWidth: 150,    // const
+        frameHeight: 202,   //const
+        sprite_X: 150, // random
+        sprite_Y: 0,        // const
+        spriteWidth: 30,    // const
+        spriteHeight: 40,   // const
+        value: 0, //random *
+        deltaX: 1,
+        deltaY: 1
+    });
     function mainLoop() {
-        // ctx.drawImage(img,
-        //     0,
-        //     0,
-        //     img.width,
-        //     img.height,
-        //     0,
-        //     0,
-        //     screenWidth,
-        //     screenHeight);
+        ctx.drawImage(img,
+            0,
+            0,
+            img.width,
+            img.height,
+            0,
+            0,
+            screenWidth,
+            screenHeight);
 
 
-        // one.render();
-        // one.gravity(1);
-        // one.spin(5);
-        // Collision(hero, one);
+        one.render();
+        one.gravity(5);
+        one.spin(3);
+        Collision(hero, one);
 
 
-         hero.render();
+         hero.render(5);
         if (moveLeft) {
             hero.move({ left: true }, 10);
         }

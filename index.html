@@ -4,22 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Sprite Animation</title>
-
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
 
-    <canvas id="main" style="border:1px solid black;z-index:5;position:absolute;"></canvas>
-    <img src="images/background.jpg" id="background1" style="display:none;" />
-    <img src="images/hero.png" id="heroImage" style="display:none;" />
+     
+    <div id="gameScreen" class="inline">
+        <canvas id="main"></canvas>
+    </div>
+    
+    <div id="menu" class="inline">
+        <svg>
+            <text x="190" y="40" >Select background!</text>
+        </svg> 
+        <div id="backgrounds">
+            <img src="./images/backgrounds/background1.jpg"  class="backgroundImage" />
+            <img src="./images/backgrounds/background2.jpg"  class="backgroundImage" />
+            <img src="./images/backgrounds/background3.jpg"  class="backgroundImage" />
+            <img src="./images/backgrounds/background4.jpg"  class="backgroundImage" />
+            <img src="./images/backgrounds/background5.jpg"  class="backgroundImage" />
+            <img src="./images/backgrounds/background6.jpg"  class="backgroundImage" />
+        </div>
+        <svg>
+            <text x="240" y="40" >Select hero!</text>
+        </svg> 
+        <div id="heroes">
+            <div id="donchoHolder" class="inline">
 
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-     <script src="scripts/gameProperties.js"></script>
-     <script src="scripts/createBackground.js"></script>
-    <script src="scripts/sprites.js"></script>
-    <script src="scripts/hero.js"></script>
-    <script src="scripts/collision.js"></script>
-    <script src="scripts/start.js"></script>
+            </div>
+            <div id="cykiHolder" class="inline">
+
+            </div>
+            <div id="koceHolder" class="inline">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="images">
+        <img src="./images/avatars/cyki.png" id="cykiImage" />
+        <img src="./images/avatars/koce.png" id="koceImage" />
+        <img src="./images/avatars/doncho.png" id="donchoImage" />
+
+        <img src="./images/avatars/multiply.png" id="multiply" />
+        <img src="./images/avatars/divide.png" id="divide" />
+        <img src="./images/avatars/zero.png" id="zero" />
+
+        <img src="./images/avatars/1blue.png" id="positiveOne" />
+        <img src="./images/avatars/2blue.png" id="positiveTwo" />
+        <img src="./images/avatars/3blue.png" id="positiveThree" />
+        <img src="./images/avatars/4blue.png" id="positiveFour" />
+        <img src="./images/avatars/5blue.png" id="positiveFive" />
+        <img src="./images/avatars/6blue.png" id="positiveSix" />
+        <img src="./images/avatars/7blue.png" id="positiveSeven" />
+        <img src="./images/avatars/8blue.png" id="positiveEight" />
+        <img src="./images/avatars/9blue.png" id="positiveNine" />
+
+        <img src="./images/avatars/1red.png" id="negativeOne" />
+        <img src="./images/avatars/2red.png" id="negativeTwo" />
+        <img src="./images/avatars/3red.png" id="negativeThree" />
+        <img src="./images/avatars/4red.png" id="negativeFour" />
+        <img src="./images/avatars/5red.png" id="negativeFive" />
+        <img src="./images/avatars/6red.png" id="negativeSix" />
+        <img src="./images/avatars/7red.png" id="negativeSeven" />
+        <img src="./images/avatars/8red.png" id="negativeEight" />
+        <img src="./images/avatars/9red.png" id="negativeNine" />
+
+        <img src="./images/backgrounds/background1.jpg" id="background1" class="backgroundImage" />
+        <img src="./images/backgrounds/background2.jpg" id="background2" class="backgroundImage" />
+        <img src="./images/backgrounds/background3.jpg" id="background3" class="backgroundImage" />
+        <img src="./images/backgrounds/background4.jpg" id="background4" class="backgroundImage" />
+        <img src="./images/backgrounds/background5.jpg" id="background5" class="backgroundImage" />
+        <img src="./images/backgrounds/background6.jpg" id="background6" class="backgroundImage" />
+    </div>
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/gameProperties.js"></script>
+    <script src="./scripts/createBackground.js"></script>
+    <script src="./scripts/sprites.js"></script>
+    <script src="./scripts/hero.js"></script>
+    <script src="./scripts/collision.js"></script>
+    <script src="./scripts/start.js"></script>
+    <script src="./scripts/interface.js"></script>
 </body>
 
 </html>

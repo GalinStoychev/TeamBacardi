@@ -1,0 +1,1 @@
+$('#gameScreen').hide();

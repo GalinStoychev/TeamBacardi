@@ -12,7 +12,7 @@ function createHero() {
             startingFrame_Y: 0,
             frameWidth: 60,
             frameHeight: 100,
-            image: document.getElementById('heroImage'),
+            image: document.getElementById('cykiImage'),
             x: 310,
             y: 270
         };

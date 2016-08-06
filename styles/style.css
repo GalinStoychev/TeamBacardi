@@ -1,0 +1,31 @@
+body{
+    background-color: rebeccapurple;
+}
+#main{
+    border:1px solid black;
+    border-radius:  5%;
+}
+.inline{
+    display: inline-block;
+}
+#images{
+    display: none;
+}
+#menu{
+    height: 300px;
+    width: 760px;
+}
+.backgroundImage{
+    width: 250px;
+    height: 150px;
+    border:1px solid black;
+    
+}
+svg{
+    display: block;
+    height: 50px;
+    width : 760px;
+    fill: orange;
+    font-size: 50px;
+}
+
