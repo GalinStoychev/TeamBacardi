@@ -46,13 +46,16 @@ function Start() {
     // var one = createNumber();
 
         for (var i = 0; i < numbers.length; i+=1) {
-
           numbers[i].render();
           numbers[i].gravity(5);
           numbers[i].spin(3);
+
+
+          Collision(hero, numbers[i]);
         }
 
         //
+
 
       //  Collision(hero, one);
 
