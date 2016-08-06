@@ -8,13 +8,17 @@
 </head>
 
 <body>
-
-
-    <div id="gameScreen" class="inline">
+    <h1 align="center"><a href="https://github.com/GalinStoychev/TeamBacardi/blob/master/README.md" target="_blank">
+        Game rules
+    </a></h1>
+   
+<div align="center">
+    <div id="gameScreen" class="inline-block">
         <canvas id="main"></canvas>
     </div>
+    <div id="score">Score: <span id="scoreValue"></span></div>
 
-    <div id="menu" class="inline">
+    <div id="menu" class="inline-block">
         <svg>
             <text x="190" y="40" >Select background!</text>
         </svg>
@@ -30,18 +34,62 @@
             <text x="240" y="40" >Select hero!</text>
         </svg>
         <div id="heroes">
-            <div id="donchoHolder" class="inline">
-                 <img src="./images/avatars/cyki_select.png" class="select" id="cyki" />
+
+            <div class="center">
+
+                <span class="info-holder inline-block">
+                    <span class="hidden">
+                        <b>Cyki</b> is good with numbers, or is he? Let see how fast he can calculate.
+                    </span>
+                </span>
+
+                <img src="./images/avatars/cyki_select.png" class="select" id="cyki" />
+                
+                <span class="info-holder inline-block">
+                    <span class="hidden">
+                         Play with <b>Cyki</b> and there will be more multiply sings <img src="./images/signs/multiplyBlue.png" />. 
+                    </span>
+                </span>
             </div>
-            <div id="cykiHolder" class="inline">
+
+            <div class="center">
+                 <span class="info-holder inline-block">
+                    <span class="hidden">
+                        <b>Koceto</b> is always talking about beer. <br />
+                        Well, we do like beer!.
+                    </span>
+                </span>
+
                  <img src="./images/avatars/koce_select.png" class="select" id="koce" />
+
+                <span class="info-holder inline-block">
+                    <span class="hidden">
+                         Play with <b>Koceto</b> and there will be no divison signs <img src="./images/signs/divideRed.png" />.<br />
+                         We want beer, not more calculation stuff.
+                    </span>
+                </span>
             </div>
-            <div id="koceHolder" class="inline">
+            
+            <div class="center">
+                <span class="info-holder inline-block">
+                    <span class="hidden">
+                        <b>Doncho</b> is the head of operations. <br />
+                        He teaches us that we should be lazy and do things <br />
+                    </span>
+                </span>
+                
                 <img src="./images/avatars/doncho_select.png" class="select" id="doncho" />
 
+                <span class="info-holder inline-block">
+                    <span class="hidden">
+                        Play with <b>Doncho</b> and there will be more zero signs <img src="./images/signs/zeroGreen.png" /><br /> to slow the falling speed of the numbers.<br />
+                       We have to be lazy, remember?.
+                    </span>
+                </span>
             </div>
         </div>
     </div>
+</div>
 
 
     <div id="images">

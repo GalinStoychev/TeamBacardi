@@ -43,7 +43,7 @@ function Start() {
           numbers[i].gravity(5);
           numbers[i].spin(3);
 
-
+          //game ends
           if (hero.value<0) {
             return;
           }
@@ -69,6 +69,7 @@ function Start() {
             hero.move({ right: true }, 10);
         }
 
+        $('#scoreValue').text(hero.value);
         window.requestAnimationFrame(mainLoop);
     }
 

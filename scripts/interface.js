@@ -19,8 +19,6 @@ $(document).ready(function () {
         }
     });
 
-
-
     $('.select').on('click', function () {
         let $this = $(this);
         $('.select').each(function () {
@@ -34,5 +32,15 @@ $(document).ready(function () {
             Start();
         }
     });
+
+    $('.select').on('mouseenter', function () {
+        $(this).prev().children().show();
+        $(this).next().children().show();
+    });
+       $('.select').on('mouseleave', function () {
+        $(this).prev().children().hide();
+        $(this).next().children().hide();
+    });
+        
 });
 
