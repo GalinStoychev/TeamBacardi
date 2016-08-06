@@ -14,8 +14,7 @@ Array.prototype.shuffle = function () {
             return self;
         };
     function Random(range) {
-
-        return Math.floor(Math.random() * range);
+        range= range|| 1;
+        return Math.round(Math.random() * range);
 
     }
-    
