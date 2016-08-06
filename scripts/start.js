@@ -5,15 +5,12 @@ function Start() {
      $('#gameScreen').show();
      $('#menu').hide();
 
-    var hero = createHero();
-
-
-    var oneImage = new Image(); //replace with img.src;
-    oneImage.src = 'images/numbers/1blue.png';
-
-    var numbers=[];
+    var hero = createHero(),
+     numbers=[],
+     sign;
 
     function mainLoop() {
+
       //draws background
         ctx.drawImage(img,
             0,
@@ -45,11 +42,18 @@ function Start() {
           numbers[i].render();
           numbers[i].gravity(5);
           numbers[i].spin(3);
+          if (typeof sign !== "string") {
+            sign="+";
+          }
 
+          if (hero.value<0) {
+            return;
+          }
           //checks for collision
-          hasCollision= Collision(hero, numbers[i]);
+          hasCollision= Collision(hero, numbers[i],sign);
           if (hasCollision) {
-          numbers.splice(i,1);
+            sign=numbers[i].value;
+            numbers.splice(i,1);
           }
         }
 
