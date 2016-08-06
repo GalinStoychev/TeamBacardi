@@ -13,3 +13,12 @@ It is a game of magic and lectors. By magic, we mean calculations because they a
 |:---:|-------------|------------|
 |  <  | left arrow  | move left  |
 |  >  | right arrow | move right |
+
+## Team Members
+* Asen Manchev
+* Galin Stoychev
+* Dimitar Talanov
+* Ivan Bozkov
+* Ivan Mladenov
+* Kiril Velichkov
+* Toshko Popov
