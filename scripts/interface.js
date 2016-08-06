@@ -1,1 +1,1 @@
-$('#gameScreen').hide();
+//$('#gameScreen').hide();

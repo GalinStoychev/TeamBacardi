@@ -1,6 +1,4 @@
-function createHero() {
-
-     var heroProperties = {
+var heroProperties = {
             numberOfFrames: 6,
             deltaFrame: 105,
             speed: 10,
@@ -12,10 +10,13 @@ function createHero() {
             startingFrame_Y: 0,
             frameWidth: 60,
             frameHeight: 100,
-            image: document.getElementById('cykiImage'),
+            image: document.getElementById('donchoImage'),
             x: 310,
             y: 270
         };
+function createHero() {
+
+     
         var hero = new heroSprite({
             context: ctx,
             image: heroProperties.image,
