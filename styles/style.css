@@ -13,14 +13,14 @@ body{
 }
 #menu{
     height: 300px;
-    width: 760px;
+    width: 800px;
 }
 .backgroundImage{
     width: 250px;
     height: 150px;
-    border:1px solid black;
-    
+    border-radius: 5%;
 }
+
 svg{
     display: block;
     height: 50px;
@@ -28,4 +28,12 @@ svg{
     fill: orange;
     font-size: 50px;
 }
-
+#heroes .inline{
+    width:720px;
+    padding-right: 50px;
+    vertical-align:middle; 
+    text-align:center;
+}
+.select{
+    border-radius: 50%;
+}

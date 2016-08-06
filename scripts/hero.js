@@ -12,11 +12,10 @@ var heroProperties = {
             frameHeight: 100,
             image: document.getElementById('donchoImage'),
             x: 310,
-            y: 270
+            y: 390
         };
 function createHero() {
 
-     
         var hero = new heroSprite({
             context: ctx,
             image: heroProperties.image,

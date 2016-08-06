@@ -2,7 +2,8 @@ function Start() {
 
     'use strict';
 
-
+     $('#gameScreen').show();
+     $('#menu').hide();
     var hero = createHero();
 
 
@@ -24,7 +25,9 @@ function Start() {
         deltaX: 1,
         deltaY: 1
     });
+    console.log(img);
     function mainLoop() {
+        
         ctx.drawImage(img,
             0,
             0,
@@ -78,4 +81,4 @@ function Start() {
     mainLoop();
 }
 
-Start();
+//Start();
