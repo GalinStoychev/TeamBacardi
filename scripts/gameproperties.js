@@ -8,8 +8,11 @@
             moveLeft = false,
             moveRight = false,
             level = 1,
-            count = 0,
-            spawnTimes=0;
+            spawns = 0,
+            spawnTimesPerLevel=10,
+            intervalOfSpawn=100,
+            timePassed=0;
+
 
         canvas.width = screenWidth;
         canvas.height = screenHeight;

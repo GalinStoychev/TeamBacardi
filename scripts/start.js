@@ -24,10 +24,25 @@ function Start() {
             0,
             screenWidth,
             screenHeight);
-  numbers.push(createNumber());
+
+          if (spawns===spawnTimesPerLevel) {
+            level++;
+            spawns=0;
+          }
+
+          if (timePassed===intervalOfSpawn) {
+            for (var i = 0; i < level; i+=1) {
+              numbers.push(createNumber());
+              console.log(i);
+            }
+            spawns++;
+            timePassed=0;
+          }
+          timePassed++;
+
 
   //draws each number and checks for collision
-    var hasCollision;
+        var hasCollision;
         for (var i = 0; i < numbers.length; i+=1) {
           numbers[i].render();
           numbers[i].gravity(5);
@@ -40,7 +55,7 @@ function Start() {
         }
 
          hero.render(5);
-         
+
         if (moveLeft) {
             hero.move({ left: true }, 10);
         }
