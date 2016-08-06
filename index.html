@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Sprite Animation</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="scripts/gameproperties.js"></script>
+     <script src="scripts/sprites.js"></script>
+     <script src="scripts/main.js"></script>
 </head>
 <body>
 
-        <canvas id="main" style="border:1px solid black;z-index:0"></canvas>
+        <canvas id="main" style="border:1px solid black;z-index:5;position:absolute;"></canvas>
+        <canvas id="background" style="border:1px solid black;z-index:0;position:absolute;"></canvas>
         <img src="images/background.jpg" id="bgrd" style="display:none;" />
-        <script src="scripts/main.js"></script>
+        <img src="images/hero.png" id="hero" style="display:none;" />
+        
+       
 </body>
 </html>
