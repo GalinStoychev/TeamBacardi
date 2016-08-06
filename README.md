@@ -3,7 +3,9 @@
 ###### by Team Bacardi
 
 ## Game Rules
+
 It is a game of magic and lectors. By magic, we mean calculations because they are both fun and fascinating. By lectors, we mean our dear friends, who happened to be also our lectors, from *“Telerik Software Academy”*. The rules of this game are quite simple (as calculations are). Collect the bouncing numbers and keep your score above ZERO. Blue numbers will be added to your score. Red numbers will be subtracted from your score. If you grab the sign for multiplication (*) or the one for division (÷), the next number you take will be multiplied/divided with your score (only once). If you grab ZERO (0), the speed of the numbers will be lowered. However, keep in mind that if your score reaches Zero or fall below it, the game is over for you young fellow. Good luck and make us proud!
+
 
 |   signs |   action   |
 |-------------------------------------------------------------|------------------|
