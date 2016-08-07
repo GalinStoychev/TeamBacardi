@@ -9,10 +9,13 @@ UI:
 - create lectors sprites DONE!
 - create backgrounds + functionality in start.js DONE!
 - start screen  DONE!
-- create score box
+- create score box DONE!
 - main.js - buttons events DONE!
 
 - readme.md - explain game rulles DONE!
+
+
+
 
 
 - create video // when the project is finished

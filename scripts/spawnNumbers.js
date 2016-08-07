@@ -1,4 +1,3 @@
-//to do
 function createNumber(){
   var   imageProperties= {
          positive: ['images/numbers/zero.png', 'images/numbers/1blue.png',
@@ -22,16 +21,16 @@ function createNumber(){
  imgValue;
 
  if (isPositive) {
-   var imgNum = Random(imageProperties.negative.length-1);
-   imgSrc = imageProperties.positive[imgNum];
-   imgValue=imageProperties.values[imgNum];
+    imgNum = Random(imageProperties.negative.length-1);
+    imgSrc = imageProperties.positive[imgNum];
+    imgValue = imageProperties.values[imgNum];
  } else {
-   var imgNum = Random(imageProperties.negative.length-1);
+    imgNum = Random(imageProperties.negative.length-1);
    imgSrc = imageProperties.negative[imgNum];
    if (typeof imageProperties.values[imgNum] === "string") {
-     imgValue=imageProperties.values[imgNum];
+     imgValue = imageProperties.values[imgNum];
    } else {
-     imgValue= -imageProperties.values[imgNum];
+     imgValue = -imageProperties.values[imgNum];
    }
  }
 
@@ -50,7 +49,6 @@ var number =  new FallingSprite({
       sprite_Y: 0,        // const
       spriteWidth: 30,    // const
       spriteHeight: 40,   // const
-      value: 0, //random *
       deltaX: 1,
       deltaY: 1,
       value: imgValue

@@ -55,16 +55,20 @@ function Sprite(options) {
 function heroSprite(options, heroProperties) {
     Sprite.call(this, options);
 
-    var self = this;
-
-    self.move = function (direction, speed) {
+    var self = this,
+        ticksCount = 0;
+    self.move = function (direction, smoothness, speed) {
+        ticksCount += 1;
 
         if (direction.left) {
             if (self.sprite_X > 0) {
                 self.sprite_X -= speed;
             }
-            self.startingFrame_X += heroProperties.deltaFrame;
-            self.startingFrame_Y = heroProperties.leftStartingFrame_Y;
+            if (ticksCount >= smoothness) {
+                self.startingFrame_X += heroProperties.deltaFrame;
+                self.startingFrame_Y = heroProperties.leftStartingFrame_Y;
+                ticksCount = 0;
+            }
             if (self.startingFrame_X >= heroProperties.deltaFrame * heroProperties.numberOfFrames) {
                 self.startingFrame_X = heroProperties.leftStartingFrame_X;
             }
@@ -73,8 +77,12 @@ function heroSprite(options, heroProperties) {
             if (self.sprite_X < (screenWidth - self.spriteWidth)) {
                 self.sprite_X += speed;
             }
-            self.startingFrame_X += heroProperties.deltaFrame;
-            self.startingFrame_Y = heroProperties.rightStartingFrame_Y;
+
+            if (ticksCount >= smoothness) {
+                self.startingFrame_X += heroProperties.deltaFrame;
+                self.startingFrame_Y = heroProperties.rightStartingFrame_Y;
+                ticksCount = 0;
+            }
             if (self.startingFrame_X >= heroProperties.deltaFrame * heroProperties.numberOfFrames) {
                 self.startingFrame_X = heroProperties.leftStartingFrame_X;
             }
@@ -100,7 +108,7 @@ function FallingSprite(options) {
         }
     };
 
-        self.gravity = function (speed) {
+    self.gravity = function (speed) {
         var canvas = $('#main');
         var canvasWidth = canvas.attr('width');
         canvasHeight = canvas.attr('height');
@@ -118,6 +126,6 @@ function FallingSprite(options) {
         this.sprite_X += this.deltaX * speed;
         this.sprite_Y += this.deltaY * speed;
     };
-    
+
     return self;
 }

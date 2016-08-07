@@ -15,8 +15,9 @@
 <div align="center">
     <div id="gameScreen" class="inline-block">
         <canvas id="main"></canvas>
+        <div id="score">Score: <span class="scoreValue"></span></div>
     </div>
-    <div id="score">Score: <span id="scoreValue"></span></div>
+    
 
     <div id="menu" class="inline-block">
         <svg>
@@ -88,6 +89,10 @@
                 </span>
             </div>
         </div>
+    </div>
+    <div id="gameOver" class="hidden">
+        <p>Game Over!</p>
+        <p>Score: <span class="scoreValue"></span></p>
     </div>
 </div>
 

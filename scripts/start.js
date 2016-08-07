@@ -2,16 +2,16 @@ function Start() {
 
     'use strict';
 
-     $('#gameScreen').show();
-     $('#menu').hide();
+    $('#gameScreen').show();
+    $('#menu').hide();
 
     var hero = createHero(),
-     numbers=[],
-     sign;
+        numbers = [],
+        sign;
 
     function mainLoop() {
 
-      //draws background
+        //draws background
         ctx.drawImage(img,
             0,
             0,
@@ -22,54 +22,58 @@ function Start() {
             screenWidth,
             screenHeight);
 
-        if (spawns===spawnTimesPerLevel) {
+        if (spawns === spawnTimesPerLevel) {
             level++;
-            spawns=0;
-          }
+            spawns = 1;
+        }
 
-        if (timePassed===intervalOfSpawn) {
-            for (var i = 0; i < level; i+=1) {
-              numbers.push(createNumber());
+        if (timePassed === intervalOfSpawn) {
+            for (var j = 0; j < level; j += 1) {
+                numbers.push(createNumber());
             }
             spawns++;
-            timePassed=0;
-          }
-          timePassed++;
+            timePassed = 1;
+        }
+        timePassed++;
 
         var hasCollision;
-        for (var i = 0; i < numbers.length; i+=1) {
-          //draws
-          numbers[i].render();
-          numbers[i].gravity(5);
-          numbers[i].spin(3);
+        for (var i = 0; i < numbers.length; i += 1) {
+            //draws
+            numbers[i].render();
+            numbers[i].gravity(1);//to do add falling speed
+            numbers[i].spin(3);
 
-          //game ends
-          if (hero.value<0) {
-            return;
-          }
-          //checks for collision
-          hasCollision= Collision(hero, numbers[i], sign);
+            //calculate score
+            $('.scoreValue').text(hero.value);
+            //game ends
+            if (hero.value < 0) {
+                $('#gameScreen').hide();
+                $('#gameOver').show();
+                return;
+            }
+            //checks for collision
+            hasCollision = Collision(hero, numbers[i], sign);
 
-          if (hasCollision) {
-            sign=numbers[i].value;
-            if (typeof sign !== "string") {
-              sign="+";
-            }          
+            if (hasCollision) {
+                sign = numbers[i].value;
+                if (typeof sign !== "string") {
+                    sign = "+";
+                }
 
-            numbers.splice(i,1);
-          }
+                numbers.splice(i, 1);
+            }
         }
 
-         hero.render(5);
+        hero.render();
 
         if (moveLeft) {
-            hero.move({ left: true }, 10);
+            hero.move({ left: true }, 5, 10);
         }
         if (moveRight) {
-            hero.move({ right: true }, 10);
+            hero.move({ right: true }, 5, 10);
         }
 
-        $('#scoreValue').text(hero.value);
+        
         window.requestAnimationFrame(mainLoop);
     }
 
