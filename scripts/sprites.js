@@ -109,16 +109,13 @@ function FallingSprite(options) {
     };
 
     self.gravity = function (speed) {
-        var canvas = $('#main');
-        var canvasWidth = canvas.attr('width');
-        canvasHeight = canvas.attr('height');
 
-        if ((this.sprite_X + speed) >= (canvasWidth - this.spriteWidth) ||
+        if ((this.sprite_X + speed) >= (screenWidth - this.spriteWidth) ||
             (this.sprite_X + speed) < 0) {
             this.deltaX *= -1;
         }
 
-        if ((this.sprite_Y + speed) >= (canvasHeight - this.spriteHeight) ||
+        if ((this.sprite_Y + speed) >= (screenHeight - this.spriteHeight) ||
             (this.sprite_Y + speed) < 0) {
             this.deltaY *= -1;
         }
