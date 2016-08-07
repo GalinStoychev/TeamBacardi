@@ -12,10 +12,15 @@ UI:
 - create score box DONE!
 - main.js - buttons events DONE!
 
-- readme.md - explain game rulles DONE!
+// ------------
+- readme.md - explain game rulles 
+    - update rules for when a hero grabs a zero
+    - add screenshorts, link to video, and link to the project in the telerik system
+
+// ------------
+- make heroes specialties work
+- make if all numbers are red, they should disappear
 
 
-
-
-
+// ------------
 - create video // when the project is finished
