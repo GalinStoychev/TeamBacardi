@@ -1,52 +1,144 @@
-body{
-    background-color: rebeccapurple;
+body {
+    background-color: lightgray;
 }
-#main{
-    border:1px solid black;
-    border-radius:  5%;
-}
-.hidden{
-    display: none;
-}
-.inline-block{
-    display: inline-block;
-}
-#images{
-    display: none;
-}
-#menu{
-    width: 800px;
-}
-.backgroundImage{
-    width: 250px;
-    height: 150px;
+
+#main {
+    border: 1px solid black;
     border-radius: 5%;
 }
 
-svg{
-    display: block;
-    height: 50px;
-    width : 760px;
-    fill: orange;
-    font-size: 50px;
-}
-.center{
-    width:720px;
-    vertical-align:middle; 
-    text-align:center;
+.hidden {
+    display: none;
 }
 
-.select{
-    border-radius: 50%;
+.inline-block {
+    display: inline-block;
 }
-.info-holder{
-    width: 300px;
-    color: white;
+
+h1 {
+    position: fixed;
+    left: 73%;
+    top: 450px;
 }
-a{
- color: greenyellow;
+
+#playbtn {
+    position: fixed;
+    left: 75%;
+    top: 550px;
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    color: #00ff12;
+    text-shadow: 1px 1px black;
+    background-color: #aaa;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
 }
-#score{
+
+#playbtn:hover {
+    text-shadow: 1px 2px black;
+    
+    background-color: #999;
+}
+
+#images {
+    display: none;
+}
+
+#menu {
+    width: 100%;
+}
+
+#choosebg {
+    width: 45%;
+    float: left;
+}
+
+#choosehero {
+    width: 20%;
+    float: left;
+}
+
+.backgroundImage {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 250px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.center {
+    width: 20%;
+    text-align: center;
+    margin: 15px 0 0 0;
+}
+
+.select {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #aaa;
+    padding: 30px;
+    border-radius: 5%;
+    margin-left: -35px
+}
+
+.info-holder {
+    width: 30%;
+    font-size: 1.2em;
+    color: #555;
+    text-shadow: 2px 1px #fff;
+}
+
+.benefits {
+    position: fixed;
+    height: 100px;
+    left: 65%;
+    top: 260px;
+    border: 1px solid dimgray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.description {
+    position: fixed;
+    height: 90px;
+    left: 65%;
+    top: 110px;
+    padding: 10px;
+    border: 1px solid dimgray;
+    border-radius: 10px;
+}
+
+#heroinfo {
+    float: left;
+}
+
+#heroinfotitle {
+    margin-left: 90px;
+    font-size: 1.8em;
+}
+
+.containertitle {
+    font-size: 1.8em;
+}
+
+.subheroinfotitles {
+    margin: -15px 0 140px 10px;
+    text-align: left;
+}
+
+a,
+p {
+    color: #555;
+    text-shadow: 2px 1px #fff;
+    font-size: 1.3em;
+}
+
+#score {
     font-size: 30px;
     color: aqua;
 }

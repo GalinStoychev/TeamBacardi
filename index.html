@@ -3,98 +3,108 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sprite Animation</title>
+    <title>CalcuLectors</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
-    <h1 align="center"><a href="https://github.com/GalinStoychev/TeamBacardi/blob/master/README.md" target="_blank">
+    <h1><a href="https://github.com/GalinStoychev/TeamBacardi/blob/master/README.md" target="_blank">
         Game rules
     </a></h1>
-   
-<div align="center">
-    <div id="gameScreen" class="inline-block">
-        <canvas id="main"></canvas>
-        <div id="score">Score: <span class="scoreValue"></span></div>
-    </div>
-    
+    <a id="playbtn" href="#">Play</a>
 
-    <div id="menu" class="inline-block">
-        <svg>
-            <text x="190" y="40" >Select background!</text>
-        </svg>
-        <div id="backgrounds">
-            <img src="./images/backgrounds/background1.jpg" data-info="1" class="backgroundImage" />
-            <img src="./images/backgrounds/background2.jpg" data-info="2" class="backgroundImage" />
-            <img src="./images/backgrounds/background3.jpg" data-info="3" class="backgroundImage" />
-            <img src="./images/backgrounds/background4.jpg" data-info="4" class="backgroundImage" />
-            <img src="./images/backgrounds/background5.jpg" data-info="5" class="backgroundImage" />
-            <img src="./images/backgrounds/background6.jpg" data-info="6" class="backgroundImage" />
+    <div align="center">
+        <div id="gameScreen" class="inline-block">
+            <canvas id="main"></canvas>
+            <div id="score">Score: <span class="scoreValue"></span></div>
         </div>
-        <svg>
-            <text x="240" y="40" >Select hero!</text>
-        </svg>
-        <div id="heroes">
+        <div id="gameOver" class="hidden">
+            <p>Game Over!</p>
+            <p>Score: <span class="scoreValue"></span></p>
+            <p><a id="playagainbtn" href="#">Play again</a></p>
+        </div>
 
-            <div class="center">
+        <div id="menu" class="inline-block">
+            <div id="choosebg">
+                <p class="containertitle">1.Select background!</p>
+                <div id="backgrounds">
+                    <img src="./images/backgrounds/background1.jpg" data-info="1" class="backgroundImage" />
+                    <img src="./images/backgrounds/background2.jpg" data-info="2" class="backgroundImage" />
+                    <img src="./images/backgrounds/background3.jpg" data-info="3" class="backgroundImage" />
+                    <img src="./images/backgrounds/background4.jpg" data-info="4" class="backgroundImage" />
+                    <img src="./images/backgrounds/background5.jpg" data-info="5" class="backgroundImage" />
+                    <img src="./images/backgrounds/background6.jpg" data-info="6" class="backgroundImage" />
+                </div>
+            </div>
+            <div id="choosehero">
+                <p class="containertitle">2.Select hero!</p>
 
-                <span class="info-holder inline-block">
+                <div id="heroes">
+
+                    <div class="center">
+
+                        <span class="info-holder description inline-block">
                     <span class="hidden">
                         <b>Cyki</b> is good with numbers, or is he? Let see how fast he can calculate.
                     </span>
-                </span>
+                        </span>
 
-                <img src="./images/avatars/cyki_select.png" class="select" id="cyki" />
-                
-                <span class="info-holder inline-block">
+                        <img src="./images/avatars/cyki_select.png" class="select" id="cyki" title="Cuki" />
+
+                        <span class="info-holder benefits inline-block">
                     <span class="hidden">
-                         Play with <b>Cyki</b> and there will be more multiply sings <img src="./images/signs/multiplyBlue.png" />. 
+                         Play with <b>Cyki</b> and there will be more multiply sings <img src="./images/signs/multiplyBlue.png" title="Cuki"/>. 
                     </span>
-                </span>
-            </div>
+                        </span>
+                    </div>
 
-            <div class="center">
-                 <span class="info-holder inline-block">
+                    <div class="center">
+                        <span class="info-holder description inline-block">
                     <span class="hidden">
                         <b>Koceto</b> is always talking about beer. <br />
                         Well, we do like beer!.
                     </span>
-                </span>
+                        </span>
 
-                 <img src="./images/avatars/koce_select.png" class="select" id="koce" />
+                        <img src="./images/avatars/koce_select.png" class="select" id="koce" title="Koce" />
 
-                <span class="info-holder inline-block">
+                        <span class="info-holder benefits inline-block">
                     <span class="hidden">
                          Play with <b>Koceto</b> and there will be no divison signs <img src="./images/signs/divideRed.png" />.<br />
                          We want beer, not more calculation stuff.
                     </span>
-                </span>
-            </div>
-            
-            <div class="center">
-                <span class="info-holder inline-block">
+                        </span>
+                    </div>
+
+                    <div class="center">
+                        <span class="info-holder description inline-block">
                     <span class="hidden">
                         <b>Doncho</b> is the head of operations. <br />
                         He teaches us that we should be lazy and do things the easy way.
                     </span>
-                </span>
-                
-                <img src="./images/avatars/doncho_select.png" class="select" id="doncho" />
+                        </span>
 
-                <span class="info-holder inline-block">
+                        <img src="./images/avatars/doncho_select.png" class="select" id="doncho" title="Doncho" />
+
+                        <span class="info-holder benefits inline-block">
                     <span class="hidden">
                         Play with <b>Doncho</b> and there will be more zero signs <img src="./images/signs/zeroGreen.png" /><br /> to slow the falling speed of the numbers.<br />
                        We have to be lazy, remember?.
                     </span>
-                </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="heroinfo">
+
+                <p id="heroinfotitle">Hero info:</p>
+                <p class="subheroinfotitles"> Description:</p>
+                <p class="subheroinfotitles">Boosts:</p>
+
+
             </div>
         </div>
     </div>
-    <div id="gameOver" class="hidden">
-        <p>Game Over!</p>
-        <p>Score: <span class="scoreValue"></span></p>
-    </div>
-</div>
 
 
     <div id="images">

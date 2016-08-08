@@ -4,6 +4,8 @@ function Start() {
 
     $('#gameScreen').show();
     $('#menu').hide();
+    $('#playbtn').hide();
+    $('h1').hide();
 
     var hero = createHero(),
         numbers = [],
@@ -40,7 +42,7 @@ function Start() {
         for (var i = 0; i < numbers.length; i += 1) {
             //draws
             numbers[i].render();
-            numbers[i].gravity(1);//to do add falling speed
+            numbers[i].gravity(1); //to do add falling speed
             numbers[i].spin(3);
 
             //calculate score
@@ -73,27 +75,25 @@ function Start() {
             hero.move({ right: true }, 5, 10);
         }
 
-        
+
         window.requestAnimationFrame(mainLoop);
     }
 
-    window.addEventListener('keydown', function (el) {
+    window.addEventListener('keydown', function(el) {
 
         if (el.which === leftArrow) {
             moveLeft = true;
-        }
-        else if (el.which === rightArrow) {
+        } else if (el.which === rightArrow) {
             moveRight = true;
 
         }
 
     }, false);
 
-    window.addEventListener('keyup', function (el) {
+    window.addEventListener('keyup', function(el) {
         if (el.which === leftArrow) {
             moveLeft = false;
-        }
-        else if (el.which === rightArrow) {
+        } else if (el.which === rightArrow) {
             moveRight = false;
         }
 

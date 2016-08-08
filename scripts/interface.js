@@ -19,9 +19,7 @@ $(document).ready(function() {
         img = document.getElementById('background' + info);
         selectBackground = true;
 
-        if (selectBackground && selectHero) {
-            Start();
-        }
+
     });
     $('.select').css('cursor', 'pointer');
     $('.select').on('click', function() {
@@ -33,9 +31,8 @@ $(document).ready(function() {
 
         heroProperties.image = document.getElementById(this.id + 'Image');
         selectHero = true;
-        if (selectBackground && selectHero) {
-            Start();
-        }
+
+
     });
 
     $('.select').on('mouseenter', function() {
@@ -56,6 +53,23 @@ $(document).ready(function() {
             }
         );
     }
+
+    $('#playagainbtn').on('click', function() {
+        $('#gameOver').hide();
+        $('#menu').show();
+        $('#playbtn').show();
+        $('h1').show();
+
+    });
+
+    $('#playbtn').on('click', function() {
+        if (selectBackground && selectHero) {
+            Start();
+        }
+        else{
+            alert('Choose background and hero first!');
+        }
+    });
 
 
 
