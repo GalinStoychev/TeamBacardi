@@ -2,7 +2,11 @@ $(document).ready(function() {
     $('#gameScreen').hide();
     var selectBackground = false;
     var selectHero = false;
-    $('#backgrounds').css('cursor', 'pointer');
+    $('#backgrounds img').css('cursor', 'pointer');
+    toggleDarkImg('#backgrounds img');
+    toggleDarkImg('.select');
+
+
     $('#backgrounds').on('click', 'img', function() {
         let $this = $(this),
             info = $this.data('info');
@@ -42,5 +46,17 @@ $(document).ready(function() {
         $(this).prev().children().hide();
         $(this).next().children().hide();
     });
+
+    function toggleDarkImg(selector) {
+        $(selector).hover(function() {
+                $(this).css('-webkit-filter', 'brightness(85%)');
+            },
+            function() {
+                $(this).css('-webkit-filter', '');
+            }
+        );
+    }
+
+
 
 });
