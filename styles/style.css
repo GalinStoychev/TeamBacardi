@@ -19,59 +19,38 @@ h1 {
     position: fixed;
     left: 70%;
     top: 430px;
-    text-align: center;
-    color: #01928b;
-    text-shadow: 1px 1px black;
-    padding: 20px 60px;
-    border-radius: 5px;
-    text-decoration: none;
-    border: 5px solid #01928b;
-}
-
-h1:hover {
-    text-shadow: 1px 2px black;
-    background-color: #abd3b9;
-    -webkit-filter: brightness(85%);
+    font-size: 1em;
 }
 
 #playbtn {
     position: fixed;
-    left: 72%;
-    top: 570px;
-    font-size: 4em;
+    left: 74%;
+    top: 580px;
+    font-size: 60px;
+}
+
+h1 a:hover,
+#playbtn:hover,
+#playagainbtn:hover,
+#changeplayerbtn:hover {
+    text-shadow: 1px 2px black;
+    -webkit-filter: brightness(85%);
+}
+
+#changeplayerbtn,
+#playagainbtn,
+#playbtn,
+h1 a {
+    display: inline-block;
+    font-size: 56px;
     font-weight: bold;
     text-align: center;
     color: #01928b;
     text-shadow: 1px 1px black;
     padding: 20px 60px;
-    border-radius: 5px;
+    border-radius: 9px;
     text-decoration: none;
     border: 5px solid #01928b;
-}
-
-#playbtn:hover {
-    text-shadow: 1px 2px black;
-    -webkit-filter: brightness(85%);
-}
-
-#playagainbtn {
-    position: fixed;
-    left: 36.5%;
-    top: 25%;
-    font-size: 4em;
-    font-weight: bold;
-    text-align: center;
-    color: #01928b;
-    text-shadow: 1px 1px black;
-    padding: 20px 60px;
-    border-radius: 5px;
-    text-decoration: none;
-    border: 5px solid #01928b;
-}
-
-#playagainbtn:hover {
-    text-shadow: 1px 2px black;
-    -webkit-filter: brightness(85%);
 }
 
 #images {
@@ -112,7 +91,7 @@ h1:hover {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    padding: 57px;
+    padding: 35px;
     border-radius: 5%;
     margin-left: -75px;
 }
@@ -177,8 +156,9 @@ p {
 .select,
 #playbtn,
 #playagainbtn,
+#changeplayerbtn,
 body,
-h1 {
+h1 a {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdc54c+29,f68a4c+100 */
     background: #fdc54c;
     /* Old browsers */

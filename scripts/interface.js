@@ -32,16 +32,24 @@ $(document).ready(function() {
         heroProperties.image = document.getElementById(this.id + 'Image');
         selectHero = true;
 
+        $('.selected').removeClass('selected');
+        $this.addClass('selected');
+
 
     });
 
-    $('.select').on('mouseenter', function() {
+    $('.select').hover(function() {
+        $('.selected').prev().children().hide();
+        $('.selected').next().children().hide();
         $(this).prev().children().show();
         $(this).next().children().show();
-    });
-    $('.select').on('mouseleave', function() {
+    }, function() {
+
         $(this).prev().children().hide();
         $(this).next().children().hide();
+        $('.selected').prev().children().show();
+        $('.selected').next().children().show();
+
     });
 
     function toggleDarkImg(selector) {
@@ -54,12 +62,14 @@ $(document).ready(function() {
         );
     }
 
-    $('#playagainbtn').on('click', function() {
+    $('#changeplayerbtn').on('click', function() {
         $('#gameOver').hide();
         $('#menu').show();
-        $('#playbtn').show();
-        $('h1').show();
+    });
 
+    $('#playagainbtn').on('click', function() {
+        $('#gameOver').hide();
+        Start();
     });
 
     $('#playbtn').on('click', function() {

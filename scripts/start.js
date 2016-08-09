@@ -4,8 +4,6 @@ function Start() {
 
     $('#gameScreen').show();
     $('#menu').hide();
-    $('#playbtn').hide();
-    $('h1').hide();
 
     var hero = createHero(),
         numbers = [],
