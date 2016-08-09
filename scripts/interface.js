@@ -15,7 +15,7 @@ $(document).ready(function() {
             $(this).css({ 'border': '' });
         });
 
-        $this.css({ 'border': '5px solid #00ff12' });
+        $this.css({ 'border': '5px solid #01928b' });
         img = document.getElementById('background' + info);
         selectBackground = true;
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
         $('.select').each(function() {
             $(this).css({ 'border': '' });
         });
-        $this.css({ 'border': '5px solid #00ff12' });
+        $this.css({ 'border': '5px solid #01928b' });
 
         heroProperties.image = document.getElementById(this.id + 'Image');
         selectHero = true;
@@ -65,8 +65,7 @@ $(document).ready(function() {
     $('#playbtn').on('click', function() {
         if (selectBackground && selectHero) {
             Start();
-        }
-        else{
+        } else {
             alert('Choose background and hero first!');
         }
     });
