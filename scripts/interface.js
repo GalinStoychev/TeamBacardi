@@ -11,7 +11,7 @@ $(document).ready(function() {
         let $this = $(this),
             info = $this.data('info');
 
-        $('.backgroundImgHolder').each(function() {
+        $('.backgroungImgHolder').each(function() {
             $(this).removeClass('border');
         });
 

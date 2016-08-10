@@ -7,7 +7,8 @@ function Start() {
 
     var hero = createHero(),
         numbers = [],
-        sign;
+        sign,
+        maxScore = 0;
 
     function mainLoop() {
 
@@ -34,11 +35,15 @@ function Start() {
             numbers[i].spin(3);
 
             //calculate score
+            if (hero.value > maxScore) {
+                maxScore = hero.value;
+            }
             $('.scoreValue').text(hero.value);
             $('.gravityValue').text(gravitySpeed);
             //game ends
             if (hero.value < 0) {
                 $('#gameOver').show();
+                $('#maxScore').text(maxScore);
                 return;
             }
             //checks for collision

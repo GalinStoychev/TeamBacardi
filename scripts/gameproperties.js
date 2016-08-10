@@ -1,4 +1,3 @@
-
 var canvas = document.getElementById("main"),
     ctx = canvas.getContext('2d'),
     screenWidth = 840,
@@ -41,7 +40,11 @@ var donchoProperties = {
         'images/numbers/4blue.png', 'images/numbers/5blue.png',
         'images/numbers/6blue.png', 'images/numbers/7blue.png',
         'images/numbers/8blue.png', 'images/numbers/9blue.png',
-        'images/numbers/divide.png', 'images/numbers/multiply.png'],
+        'images/numbers/divide.png', 'images/numbers/multiply.png',
+        'images/numbers/zero.png', 'images/numbers/zero.png',
+        'images/numbers/zero.png', 'images/numbers/zero.png',
+        'images/numbers/zero.png', 'images/numbers/zero.png'
+    ],
     negative: ['images/numbers/zero.png', 'images/numbers/1red.png',
         'images/numbers/2red.png', 'images/numbers/3red.png',
         'images/numbers/4red.png', 'images/numbers/5red.png',
@@ -50,7 +53,8 @@ var donchoProperties = {
         'images/numbers/divide.png', 'images/numbers/multiply.png',
         'images/numbers/zero.png', 'images/numbers/zero.png',
         'images/numbers/zero.png', 'images/numbers/zero.png',
-        'images/numbers/zero.png', 'images/numbers/zero.png'],
+        'images/numbers/zero.png', 'images/numbers/zero.png'
+    ],
     values: [0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*']
 };
 var cykiProperties = {
@@ -61,7 +65,8 @@ var cykiProperties = {
         'images/numbers/8blue.png', 'images/numbers/9blue.png',
         'images/numbers/divide.png', 'images/numbers/multiply.png',
         'images/numbers/multiply.png', 'images/numbers/multiply.png',
-        'images/numbers/multiply.png', 'images/numbers/multiply.png'],
+        'images/numbers/multiply.png', 'images/numbers/multiply.png'
+    ],
     negative: ['images/numbers/zero.png', 'images/numbers/1red.png',
         'images/numbers/2red.png', 'images/numbers/3red.png',
         'images/numbers/4red.png', 'images/numbers/5red.png',
@@ -69,7 +74,8 @@ var cykiProperties = {
         'images/numbers/8red.png', 'images/numbers/9red.png',
         'images/numbers/divide.png', 'images/numbers/multiply.png',
         'images/numbers/multiply.png', 'images/numbers/multiply.png',
-        'images/numbers/multiply.png', 'images/numbers/multiply.png'],
+        'images/numbers/multiply.png', 'images/numbers/multiply.png'
+    ],
     values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*', '*', '*', '*', '*']
 };
 var koceProperties = {
@@ -78,12 +84,14 @@ var koceProperties = {
         'images/numbers/4blue.png', 'images/numbers/5blue.png',
         'images/numbers/6blue.png', 'images/numbers/7blue.png',
         'images/numbers/8blue.png', 'images/numbers/9blue.png',
-        'images/numbers/multiply.png'],
+        'images/numbers/multiply.png'
+    ],
     negative: ['images/numbers/zero.png', 'images/numbers/1red.png',
         'images/numbers/2red.png', 'images/numbers/3red.png',
         'images/numbers/4red.png', 'images/numbers/5red.png',
         'images/numbers/6red.png', 'images/numbers/7red.png',
         'images/numbers/8red.png', 'images/numbers/9red.png',
-        'images/numbers/multiply.png'],
+        'images/numbers/multiply.png'
+    ],
     values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '*']
 };
