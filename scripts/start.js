@@ -101,5 +101,3 @@ function Start() {
 
     mainLoop();
 }
-
-//Start();

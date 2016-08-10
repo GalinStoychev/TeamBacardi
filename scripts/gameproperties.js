@@ -43,8 +43,7 @@ var donchoProperties = {
         'images/numbers/divide.png', 'images/numbers/multiply.png',
         'images/numbers/zero.png', 'images/numbers/zero.png',
         'images/numbers/zero.png', 'images/numbers/zero.png',
-        'images/numbers/zero.png', 'images/numbers/zero.png'
-    ],
+        'images/numbers/zero.png', 'images/numbers/zero.png'],
     negative: ['images/numbers/zero.png', 'images/numbers/1red.png',
         'images/numbers/2red.png', 'images/numbers/3red.png',
         'images/numbers/4red.png', 'images/numbers/5red.png',
