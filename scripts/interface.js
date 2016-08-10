@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     $('#gameScreen').hide();
     var selectBackground = false;
@@ -7,21 +7,21 @@ $(document).ready(function () {
     toggleDarkImg('.select');
 
 
-    $('#backgrounds').on('click', 'img', function () {
+    $('#backgrounds').on('click', '.backgroungImgHolder', function() {
         let $this = $(this),
             info = $this.data('info');
 
-        $('#backgrounds img').each(function () {
-            $(this).parent('.img').removeClass('border');
+        $('.backgroundImgHolder').each(function() {
+            $(this).removeClass('border');
         });
 
-        $(this).parent('.img').addClass('border');
+        $(this).addClass('border');
         backGroundImage = document.getElementById('background' + info);
         selectBackground = true;
 
     });
 
-    $('.select').on('click', function () {
+    $('.select').on('click', function() {
         let $this = $(this),
             id = this.id;
         if (id === "cyki") {
@@ -29,10 +29,11 @@ $(document).ready(function () {
         }
         if (id === "koce") {
             fallingNumberProperties = koceProperties;
-        } if (id === "doncho") {
+        }
+        if (id === "doncho") {
             fallingNumberProperties = donchoProperties;
         }
-        $('.select').each(function () {
+        $('.select').each(function() {
             $(this).removeClass('border');
         });
         $this.addClass('border');
@@ -46,12 +47,12 @@ $(document).ready(function () {
 
     });
 
-    $('.select').hover(function () {
+    $('.select').hover(function() {
         $('.selected').prev().children().hide();
         $('.selected').next().children().hide();
         $(this).prev().children().show();
         $(this).next().children().show();
-    }, function () {
+    }, function() {
 
         $(this).prev().children().hide();
         $(this).next().children().hide();
@@ -61,28 +62,28 @@ $(document).ready(function () {
     });
 
     function toggleDarkImg(selector) {
-        $(selector).hover(function () {
-            $(this).addClass('darken');
-        },
-            function () {
+        $(selector).hover(function() {
+                $(this).addClass('darken');
+            },
+            function() {
                 $(this).removeClass('darken');
             }
         );
     }
 
-    $('#changeplayerbtn').on('click', function () {
+    $('#changeplayerbtn').on('click', function() {
         $('#gameScreen').hide();
         $('#gameOver').hide();
         $('#menu').show();
     });
 
-    $('#playagainbtn').on('click', function () {
+    $('#playagainbtn').on('click', function() {
         $('#gameScreen').hide();
         $('#gameOver').hide();
         Start();
     });
 
-    $('#playbtn').on('click', function () {
+    $('#playbtn').on('click', function() {
         if (selectBackground && selectHero) {
             Start();
         } else {

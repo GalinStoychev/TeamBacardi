@@ -8,14 +8,15 @@ function Start() {
     var hero = createHero(),
         numbers = [],
         sign;
+
     function mainLoop() {
 
         //draws background
         ctx.drawImage(backGroundImage, 0, 0, backGroundImage.width, backGroundImage.height, 0, 0, screenWidth, screenHeight);
 
         if (spawns === spawnTimesPerLevel) {
-            if(gravitySpeed <= maxGravitySpeed){
-            gravitySpeed++;
+            if (gravitySpeed <= maxGravitySpeed) {
+                gravitySpeed++;
             }
             spawns = 1;
         }
@@ -26,79 +27,70 @@ function Start() {
             timePassed = 1;
         }
         timePassed++;
-        for (var i = 0; i < numbers.length; i += 1) { 
-        //draws
-        numbers[i].render();
-        numbers[i].gravity(gravitySpeed); //to do add falling speed
-        numbers[i].spin(3);
+        for (var i = 0; i < numbers.length; i += 1) {
+            //draws
+            numbers[i].render();
+            numbers[i].gravity(gravitySpeed); //to do add falling speed
+            numbers[i].spin(3);
 
-        //calculate score
-        $('.scoreValue').text(hero.value);
-        //game ends
-        if (hero.value < 0) {
-            $('#gameOver').show();
-            return;
-        }
-        //checks for collision
-        var hasCollision;
-        hasCollision = Collision(hero, numbers[i], sign);
-
-        if (hasCollision) {
-            sign = numbers[i].value;
-            if (typeof sign !== "string") {
-                sign = "+";
+            //calculate score
+            $('.scoreValue').text(hero.value);
+            //game ends
+            if (hero.value < 0) {
+                $('#gameOver').show();
+                return;
             }
-            numbers.splice(i, 1);
+            //checks for collision
+            var hasCollision;
+            hasCollision = Collision(hero, numbers[i], sign);
+
+            if (hasCollision) {
+                sign = numbers[i].value;
+                if (typeof sign !== "string") {
+                    sign = "+";
+                }
+                numbers.splice(i, 1);
+            }
         }
+
+        hero.render();
+
+        if (moveLeft) {
+            hero.move({ left: true }, 5, 10);
+        }
+        if (moveRight) {
+            hero.move({ right: true }, 5, 10);
+        }
+
+
+        window.requestAnimationFrame(mainLoop);
     }
 
-    hero.render();
 
-    if (moveLeft) {
-        hero.move({ left: true }, 5, 10);
-    }
-    if (moveRight) {
-        hero.move({ right: true }, 5, 10);
-    }
-
-
-    window.requestAnimationFrame(mainLoop);
-}
-
-<<<<<<< HEAD
     window.addEventListener('keydown', function(el) {
-=======
-window.addEventListener('keydown', function (el) {
->>>>>>> 069a44a99575cd23b5c360e9dbfc517f3bb88713
 
-    if (el.which === leftArrow) {
-        moveLeft = true;
-    } else if (el.which === rightArrow) {
-        moveRight = true;
 
-    }
+        if (el.which === leftArrow) {
+            moveLeft = true;
+        } else if (el.which === rightArrow) {
+            moveRight = true;
 
-}, false);
+        }
 
-<<<<<<< HEAD
+    }, false);
+
+
     window.addEventListener('keyup', function(el) {
         if (el.which === leftArrow) {
             moveLeft = false;
         } else if (el.which === rightArrow) {
             moveRight = false;
         }
-=======
-window.addEventListener('keyup', function (el) {
-    if (el.which === leftArrow) {
-        moveLeft = false;
-    } else if (el.which === rightArrow) {
-        moveRight = false;
-    }
->>>>>>> 069a44a99575cd23b5c360e9dbfc517f3bb88713
 
-}, false);
 
-mainLoop();
+    }, false);
+
+    mainLoop();
 }
 
 //Start();
