@@ -7,20 +7,12 @@ function Start() {
 
     var hero = createHero(),
         numbers = [],
-        sign;
-
+        sign,
+        img = document.getElementById('background1');
     function mainLoop() {
 
         //draws background
-        ctx.drawImage(img,
-            0,
-            0,
-            img.width,
-            img.height,
-            0,
-            0,
-            screenWidth,
-            screenHeight);
+        ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, screenWidth, screenHeight);
 
         if (spawns === spawnTimesPerLevel) {
             level++;
@@ -76,7 +68,7 @@ function Start() {
         window.requestAnimationFrame(mainLoop);
     }
 
-    window.addEventListener('keydown', function(el) {
+    window.addEventListener('keydown', function (el) {
 
         if (el.which === leftArrow) {
             moveLeft = true;
@@ -87,7 +79,7 @@ function Start() {
 
     }, false);
 
-    window.addEventListener('keyup', function(el) {
+    window.addEventListener('keyup', function (el) {
         if (el.which === leftArrow) {
             moveLeft = false;
         } else if (el.which === rightArrow) {

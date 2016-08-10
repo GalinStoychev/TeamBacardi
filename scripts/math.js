@@ -13,8 +13,10 @@ Array.prototype.shuffle = function () {
             }
             return self;
         };
+
+    var delta = 40;    
     function Random(range) {
-        range= range|| 1;
-        return Math.round(Math.random() * range);
+        range = range || 1;
+        return (delta + Math.round(Math.random() * range)) - delta;
 
     }
