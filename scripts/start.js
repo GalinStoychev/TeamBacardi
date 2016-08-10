@@ -7,12 +7,11 @@ function Start() {
 
     var hero = createHero(),
         numbers = [],
-        sign,
-        img = document.getElementById('background1');
+        sign;
     function mainLoop() {
 
         //draws background
-        ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, screenWidth, screenHeight);
+        ctx.drawImage(backGroundImage, 0, 0, backGroundImage.width, backGroundImage.height, 0, 0, screenWidth, screenHeight);
 
         if (spawns === spawnTimesPerLevel) {
             if(gravitySpeed <= maxGravitySpeed){
