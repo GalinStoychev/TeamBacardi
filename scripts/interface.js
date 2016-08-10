@@ -76,14 +76,13 @@ $(document).ready(function () {
         $('#gameScreen').hide();
         $('#gameOver').hide();
         $('#menu').show();
+         defaultProperties();
     });
 
     $('#playagainbtn').on('click', function () {
         $('#gameScreen').hide();
         $('#gameOver').hide();
-        gravitySpeed = 1;
-        spawns = 0;
-        spawnTimesPerLevel = 10;
+        defaultProperties();
         Start();
     });
 
@@ -94,5 +93,11 @@ $(document).ready(function () {
             alert('Choose background and hero first!');
         }
     });
+
+    function defaultProperties() {
+        gravitySpeed = 1;
+        spawns = 0;
+        spawnTimesPerLevel = 10;
+    }
 
 });
