@@ -42,6 +42,16 @@ h1,
     height: 90px;
 }
 
+h1 {
+    top: 450px;
+    right: 10%;
+}
+
+#playbtn {
+    top: 610px;
+    right: 13%;
+}
+
 h1 a:hover,
 #playbtn:hover,
 #playagainbtn:hover,
@@ -221,8 +231,8 @@ h2 {
     cursor: pointer;
 }
 h3{
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 /**/
