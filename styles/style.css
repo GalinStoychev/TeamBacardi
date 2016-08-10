@@ -23,32 +23,32 @@ h1,
 }
 
 .description {
-    top: 110px;
+    top: 170px;
     right: 90px;
     border: 2px solid #01928b;
     border-radius: 10px;
     padding: 20px 0;
     width: 200px;
-    height: 60px;
+    height: 70px;
 }
 
 .benefits {
-    top: 260px;
+    top: 320px;
     right: 90px;
     border: 2px solid #01928b;
     border-radius: 10px;
     padding: 20px 0;
     width: 200px;
-    height: 90px;
+    height: 100px;
 }
 
 h1 {
-    top: 450px;
+    top: 460px;
     right: 10%;
 }
 
 #playbtn {
-    top: 610px;
+    top: 620px;
     right: 13%;
 }
 
@@ -115,6 +115,7 @@ h1 a {
 .logo {
     margin-top: 20px;
 }
+
 .select {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -127,9 +128,10 @@ h1 a {
 
 .info-holder {
     width: 30%;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #01928b;
     text-shadow: 2px 1px #006762;
+    letter-spacing: 1.5px;
 }
 
 #heroinfo {
@@ -166,9 +168,11 @@ h2 {
     margin-top: 0px;
     font-size: 4em;
 }
-.purple{
+
+.purple {
     color: blueviolet;
 }
+
 #gravity {
     width: 250px;
     height: 150px;
@@ -244,6 +248,16 @@ h2 {
 h3 {
     margin: 0;
     padding: 0;
+}
+
+h2 {
+    margin-top: 5px;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 
 
