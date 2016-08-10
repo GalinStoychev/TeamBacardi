@@ -1,3 +1,4 @@
+
 var canvas = document.getElementById("main"),
     ctx = canvas.getContext('2d'),
     screenWidth = 840,
@@ -34,6 +35,8 @@ var heroProperties = {
     x: 310,
     y: 390
 };
+console.log(heroProperties);
+
 var donchoProperties = {
     positive: ['images/numbers/zero.png', 'images/numbers/1blue.png',
         'images/numbers/2blue.png', 'images/numbers/3blue.png',
