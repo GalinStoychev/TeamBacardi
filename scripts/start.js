@@ -65,7 +65,11 @@ function Start() {
     window.requestAnimationFrame(mainLoop);
 }
 
+<<<<<<< HEAD
+    window.addEventListener('keydown', function(el) {
+=======
 window.addEventListener('keydown', function (el) {
+>>>>>>> 069a44a99575cd23b5c360e9dbfc517f3bb88713
 
     if (el.which === leftArrow) {
         moveLeft = true;
@@ -76,12 +80,21 @@ window.addEventListener('keydown', function (el) {
 
 }, false);
 
+<<<<<<< HEAD
+    window.addEventListener('keyup', function(el) {
+        if (el.which === leftArrow) {
+            moveLeft = false;
+        } else if (el.which === rightArrow) {
+            moveRight = false;
+        }
+=======
 window.addEventListener('keyup', function (el) {
     if (el.which === leftArrow) {
         moveLeft = false;
     } else if (el.which === rightArrow) {
         moveRight = false;
     }
+>>>>>>> 069a44a99575cd23b5c360e9dbfc517f3bb88713
 
 }, false);
 
