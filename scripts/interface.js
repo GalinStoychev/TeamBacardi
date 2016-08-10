@@ -15,7 +15,7 @@
         });
 
         $(this).addClass('border');
-        img = document.getElementById('background' + info);
+        backgroundImage = document.getElementById('background' + info);
         selectBackground = true;
 
     });
