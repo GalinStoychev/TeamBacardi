@@ -6,15 +6,15 @@
     toggleDarkImg('.select');
 
 
-    $('#backgrounds').on('click', 'img', function() {
+    $('#backgrounds').on('click', '.img', function() {
         let $this = $(this),
             info = $this.data('info');
 
-        $('#backgrounds img').each(function() {
-            $(this).parent('.img').removeClass('border');
+        $('#backgrounds .img').each(function() {
+            $(this).removeClass('border');
         });
 
-        $(this).parent('.img').addClass('border');
+        $(this).addClass('border');
         img = document.getElementById('background' + info);
         selectBackground = true;
 
