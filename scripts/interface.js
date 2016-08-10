@@ -1,4 +1,4 @@
-
+window.addEventListener('load',function(){
     $('#gameScreen').hide();
     var selectBackground = false;
     var selectHero = false;
@@ -98,3 +98,4 @@
         spawns = 0;
         spawnTimesPerLevel = 10;
     }
+});
