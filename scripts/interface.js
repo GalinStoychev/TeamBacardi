@@ -1,4 +1,3 @@
-$(document).ready(function() {
     $('#gameScreen').hide();
     var selectBackground = false;
     var selectHero = false;
@@ -80,7 +79,3 @@ $(document).ready(function() {
             alert('Choose background and hero first!');
         }
     });
-
-
-
-});
