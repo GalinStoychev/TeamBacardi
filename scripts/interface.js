@@ -87,6 +87,9 @@ $(document).ready(function () {
     });
 
     $('#playbtn').on('click', function () {
+        
+        fallingNumberProperties = cykiProperties;
+        Start();
         if (selectBackground && selectHero) {
             Start();
         } else {
