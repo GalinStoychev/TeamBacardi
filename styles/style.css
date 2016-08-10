@@ -4,7 +4,7 @@ body {
 
 #main {
     border: 1px solid black;
-    border-radius: 5%;
+    border-radius: 40px;
 }
 
 .hidden {
@@ -155,9 +155,12 @@ h2 {
     font-size: 1.3em;
 }
 
-#score {
+#score,
+.maxScore {
     font-size: 30px;
     color: #01928b;
+    margin-top: 0px;
+    font-size: 4em;
 }
 
 .select,
@@ -196,11 +199,6 @@ h2 {
     margin-bottom: 400px;
 }
 
-#score {
-    margin-top: 0px;
-    font-size: 4em;
-}
-
 .darken {
     -webkit-filter: brightness(85%);
     filter: brightness(85%);
@@ -220,6 +218,5 @@ h2 {
     padding: 0;
     cursor: pointer;
 }
-
 
 /**/
