@@ -112,6 +112,9 @@ h1 a {
     margin: 15px 0 0 0;
 }
 
+.logo {
+    margin-top: 20px;
+}
 .select {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
