@@ -1,12 +1,12 @@
-window.addEventListener('load',function(){
+window.addEventListener('load', function() {
     $('#gameScreen').hide();
     var selectBackground = false;
     var selectHero = false;
-    toggleDarkImg('#backgrounds img');
+    toggleDarkImg('.backgroungImgHolder');
     toggleDarkImg('.select');
 
 
-    $('#backgrounds').on('click', '.backgroungImgHolder', function () {
+    $('#backgrounds').on('click', '.backgroungImgHolder', function() {
         let $this = $(this),
             info = $this.data('info');
 
@@ -21,7 +21,7 @@ window.addEventListener('load',function(){
 
     });
 
-    $('.select').on('click', function () {
+    $('.select').on('click', function() {
         let $this = $(this),
             id = this.id;
         if (id === "cyki") {
@@ -33,7 +33,7 @@ window.addEventListener('load',function(){
         if (id === "doncho") {
             fallingNumberProperties = donchoProperties;
         }
-        $('.select').each(function () {
+        $('.select').each(function() {
             $(this).removeClass('border');
         });
         $this.addClass('border');
@@ -47,12 +47,12 @@ window.addEventListener('load',function(){
 
     });
 
-    $('.select').hover(function () {
+    $('.select').hover(function() {
         $('.selected').prev().children().hide();
         $('.selected').next().children().hide();
         $(this).prev().children().show();
         $(this).next().children().show();
-    }, function () {
+    }, function() {
 
         $(this).prev().children().hide();
         $(this).next().children().hide();
@@ -62,30 +62,30 @@ window.addEventListener('load',function(){
     });
 
     function toggleDarkImg(selector) {
-        $(selector).hover(function () {
-            $(this).addClass('darken');
-        },
-            function () {
+        $(selector).hover(function() {
+                $(this).addClass('darken');
+            },
+            function() {
                 $(this).removeClass('darken');
             }
         );
     }
 
-    $('#changeplayerbtn').on('click', function () {
+    $('#changeplayerbtn').on('click', function() {
         $('#gameScreen').hide();
         $('#gameOver').hide();
         $('#menu').show();
-         defaultProperties();
+        defaultProperties();
     });
 
-    $('#playagainbtn').on('click', function () {
+    $('#playagainbtn').on('click', function() {
         $('#gameScreen').hide();
         $('#gameOver').hide();
         defaultProperties();
         Start();
     });
 
-    $('#playbtn').on('click', function () {
+    $('#playbtn').on('click', function() {
         if (selectBackground && selectHero) {
             Start();
         } else {
