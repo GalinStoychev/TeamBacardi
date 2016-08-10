@@ -35,6 +35,7 @@ function Start() {
 
             //calculate score
             $('.scoreValue').text(hero.value);
+            $('.gravityValue').text(gravitySpeed);
             //game ends
             if (hero.value < 0) {
                 $('#gameOver').show();
