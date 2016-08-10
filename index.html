@@ -11,22 +11,31 @@
 <body>
 
 
-    <div align="center">
+    <div id="wrapper">
 
-        <div id="menu" class="inline-block">
-            <h1><a href="https://github.com/GalinStoychev/TeamBacardi/blob/master/README.md" target="_blank">
-        Game rules
-    </a></h1>
-            <a id="playbtn" href="#">Play</a>
+        <div id="menu" class="inline-block" align="center">
+
             <div id="choosebg">
                 <p class="containertitle">1.Select background!</p>
                 <div id="backgrounds">
-                    <img src="./images/backgrounds/background1.jpg" data-info="1" class="backgroundImage" />
-                    <img src="./images/backgrounds/background2.jpg" data-info="2" class="backgroundImage" />
-                    <img src="./images/backgrounds/background3.jpg" data-info="3" class="backgroundImage" />
-                    <img src="./images/backgrounds/background4.jpg" data-info="4" class="backgroundImage" />
-                    <img src="./images/backgrounds/background5.jpg" data-info="5" class="backgroundImage" />
-                    <img src="./images/backgrounds/background6.jpg" data-info="6" class="backgroundImage" />
+                    <div class="img">
+                        <img src="./images/backgrounds/background1.jpg" data-info="1" class="backgroundImage" />
+                    </div>
+                    <div class="img">
+                        <img src="./images/backgrounds/background2.jpg" data-info="2" class="backgroundImage" />
+                    </div>
+                    <div class="img">
+                        <img src="./images/backgrounds/background3.jpg" data-info="3" class="backgroundImage" />
+                    </div>
+                    <div class="img">
+                        <img src="./images/backgrounds/background4.jpg" data-info="4" class="backgroundImage" />
+                    </div>
+                    <div class="img">
+                        <img src="./images/backgrounds/background5.jpg" data-info="5" class="backgroundImage" />
+                    </div>
+                    <div class="img">
+                        <img src="./images/backgrounds/background6.jpg" data-info="6" class="backgroundImage" />
+                    </div>
                 </div>
             </div>
             <div id="choosehero">
@@ -96,15 +105,19 @@
 
 
             </div>
+            <h1 class="inline-block"><a href="https://github.com/GalinStoychev/TeamBacardi/blob/master/README.md" target="_blank">
+        Game rules
+    </a></h1>
+            <a id="playbtn" class="inline-block" href="#">Play</a>
         </div>
-
-        <div id="gameScreen" class="inline-block">
-            <canvas id="main"></canvas>
-            <div id="score">Score: <span class="scoreValue"></span></div>
+        <div align="center">
+            <div id="gameScreen">
+                <canvas id="main"></canvas>
+                <div id="score">Score: <span class="scoreValue"></span></div>
+            </div>
         </div>
-        <div id="gameOver" class="hidden">
+        <div id="gameOver" class="hidden" align="center">
             <h2>Game Over!</h2>
-            <p id="score">Score: <span class="scoreValue"></span></p>
             <p><a id="playagainbtn" href="#">Play again</a></p>
             <p><a id="changeplayerbtn" href="#">Change player</a></p>
         </div>
@@ -159,5 +172,4 @@
     <script src="./scripts/start.js"></script>
     <script src="./scripts/interface.js"></script>
 </body>
-
 </html>

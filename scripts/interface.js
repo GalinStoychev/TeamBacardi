@@ -12,22 +12,21 @@ $(document).ready(function() {
             info = $this.data('info');
 
         $('#backgrounds img').each(function() {
-            $(this).css({ 'border': '' });
+            $(this).parent('.img').removeClass('border');
         });
 
-        $this.css({ 'border': '5px solid #01928b' });
+        $(this).parent('.img').addClass('border');
         img = document.getElementById('background' + info);
         selectBackground = true;
-
 
     });
     $('.select').css('cursor', 'pointer');
     $('.select').on('click', function() {
         let $this = $(this);
         $('.select').each(function() {
-            $(this).css({ 'border': '' });
+            $(this).removeClass('border');
         });
-        $this.css({ 'border': '5px solid #01928b' });
+        $this.addClass('border');
 
         heroProperties.image = document.getElementById(this.id + 'Image');
         selectHero = true;
@@ -54,10 +53,10 @@ $(document).ready(function() {
 
     function toggleDarkImg(selector) {
         $(selector).hover(function() {
-                $(this).css('-webkit-filter', 'brightness(85%)');
+                $(this).addClass('darken');
             },
             function() {
-                $(this).css('-webkit-filter', '');
+                $(this).removeClass('darken');
             }
         );
     }
