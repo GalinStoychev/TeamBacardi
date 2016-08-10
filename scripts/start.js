@@ -47,7 +47,6 @@ function Start() {
             $('.scoreValue').text(hero.value);
             //game ends
             if (hero.value < 0) {
-                $('#gameScreen').hide();
                 $('#gameOver').show();
                 return;
             }

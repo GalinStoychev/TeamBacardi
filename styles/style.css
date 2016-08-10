@@ -142,7 +142,8 @@ h1 a {
 }
 
 a,
-p {
+p,
+h2 {
     color: #01928b;
     text-shadow: 2px 1px #006762;
     font-size: 1.3em;
@@ -170,4 +171,18 @@ h1 a {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fdc54c', endColorstr='#f68a4c', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
+}
+
+#gameOver {
+    position: fixed;
+    top: 8%;
+    left: 38%
+}
+
+h2 {
+    font-size: 120px;
+}
+
+#score {
+    margin-top: 180px;
 }

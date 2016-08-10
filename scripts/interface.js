@@ -63,11 +63,13 @@ $(document).ready(function() {
     }
 
     $('#changeplayerbtn').on('click', function() {
+        $('#gameScreen').hide();
         $('#gameOver').hide();
         $('#menu').show();
     });
 
     $('#playagainbtn').on('click', function() {
+        $('#gameScreen').hide();
         $('#gameOver').hide();
         Start();
     });
