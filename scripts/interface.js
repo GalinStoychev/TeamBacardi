@@ -1,4 +1,3 @@
-$(document).ready(function () {
 
     $('#gameScreen').hide();
     var selectBackground = false;
@@ -87,9 +86,6 @@ $(document).ready(function () {
     });
 
     $('#playbtn').on('click', function () {
-        
-        fallingNumberProperties = cykiProperties;
-        Start();
         if (selectBackground && selectHero) {
             Start();
         } else {
@@ -102,5 +98,3 @@ $(document).ready(function () {
         spawns = 0;
         spawnTimesPerLevel = 10;
     }
-
-});
