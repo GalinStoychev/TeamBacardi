@@ -4,7 +4,7 @@
             hero.sprite_Y < obj.sprite_Y + obj.spriteHeight &&
             hero.spriteHeight + hero.sprite_Y > obj.sprite_Y) {
 
-            if (obj.value===0 && level>1) {
+            if (obj.value===0 && level > 1) {
               level--;
             } else if (typeof obj.value !== "string"){
               if (sign==="+") {
@@ -15,16 +15,13 @@
                 } else if(sign==="*") {
                   hero.value *= obj.value;
                 }
-                obj.value="+";
+                obj.value = "+";
               }
             }
-
-
             obj.remove();
-
             return true;
         }
-
         return false;
     }
+
 

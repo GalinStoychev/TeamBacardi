@@ -7,11 +7,12 @@ var canvas = document.getElementById("main"),
     rightArrow = 39,
     moveLeft = false,
     moveRight = false,
-    level = 1,
+    gravitySpeed = 1,
     spawns = 0,
     spawnTimesPerLevel = 10,
     intervalOfSpawn = 100,
-    timePassed = intervalOfSpawn;
+    timePassed = intervalOfSpawn,
+    maxGravitySpeed = 5;
 
 canvas.width = screenWidth;
 canvas.height = screenHeight;
@@ -46,4 +47,4 @@ var imageProperties = {
              'images/numbers/8red.png', 'images/numbers/9red.png',
              'images/numbers/divide.png', 'images/numbers/multiply.png'],
          values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*']
- }
+ };
