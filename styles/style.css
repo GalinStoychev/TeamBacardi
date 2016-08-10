@@ -163,7 +163,9 @@ h2 {
     margin-top: 0px;
     font-size: 4em;
 }
-
+.purple{
+    color: blueviolet;
+}
 #gravity {
     width: 250px;
     height: 150px;
