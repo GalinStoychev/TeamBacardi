@@ -55,10 +55,13 @@ function Start() {
 
         hero.render();
 
+        let audio = document.getElementById('walkingAudioMp3');
         if (moveLeft) {
+            audio.play();
             hero.move({ left: true }, 5, 10);
         }
         if (moveRight) {
+            audio.play();
             hero.move({ right: true }, 5, 10);
         }
 
