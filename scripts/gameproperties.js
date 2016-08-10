@@ -54,7 +54,7 @@ var donchoProperties = {
         'images/numbers/zero.png', 'images/numbers/zero.png',
         'images/numbers/zero.png', 'images/numbers/zero.png'
     ],
-    values: [0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*']
+    values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*', 0, 0, 0, 0, 0, 0]
 };
 var cykiProperties = {
     positive: ['images/numbers/zero.png', 'images/numbers/1blue.png',

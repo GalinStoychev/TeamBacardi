@@ -165,13 +165,18 @@ h2 {
 }
 
 #gravity {
-    float: right;
-    width: 500px;
+    width: 250px;
+    height: 150px;
 }
 
 #score {
-    width: 500px;
-    float: left;
+    height: 150px;
+    width: 200px;
+}
+
+.inline {
+    display: inline-block;
+    align-content: center;
 }
 
 .select,
@@ -230,9 +235,11 @@ h2 {
     padding: 0;
     cursor: pointer;
 }
-h3{
+
+h3 {
     margin: 0;
     padding: 0;
 }
+
 
 /**/
