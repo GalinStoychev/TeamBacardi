@@ -34,4 +34,8 @@ It is a game of magic and lectors. By magic, we mean calculations because they a
 * Kiril Velichkov
 * Toshko Popov
 
+## RawGit
 [RawGit](https://rawgit.com/GalinStoychev/TeamBacardi/master/index.html#)
+
+## YouTube Video
+[YouTube](https://www.youtube.com/watch?v=GELwiYoPrK4&feature=youtu.be)
