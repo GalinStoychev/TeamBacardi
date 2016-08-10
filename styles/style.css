@@ -42,16 +42,6 @@ h1,
     height: 90px;
 }
 
-h1 {
-    top: 450px;
-    right: 10%;
-}
-
-#playbtn {
-    top: 610px;
-    right: 13%;
-}
-
 h1 a:hover,
 #playbtn:hover,
 #playagainbtn:hover,
@@ -156,11 +146,22 @@ h2 {
 }
 
 #score,
+#gravity,
 .maxScore {
     font-size: 30px;
     color: #01928b;
     margin-top: 0px;
     font-size: 4em;
+}
+
+#gravity {
+    float: right;
+    width: 500px;
+}
+
+#score {
+    width: 500px;
+    float: left;
 }
 
 .select,
@@ -196,7 +197,8 @@ h1 a {
 
 h2 {
     font-size: 120px;
-    margin-bottom: 400px;
+    padding-top: 130px;
+    margin-bottom: 200px;
 }
 
 .darken {
@@ -217,6 +219,10 @@ h2 {
     margin: 5;
     padding: 0;
     cursor: pointer;
+}
+h3{
+    padding: 0;
+    margin: 0;
 }
 
 /**/
