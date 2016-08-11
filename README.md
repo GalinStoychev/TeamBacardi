@@ -9,14 +9,19 @@ It is a game of magic and lectors. By magic, we mean calculations because they a
 
 |   sign |   action   |
 |-------------------------------------------------------------|------------------|
-| ![alt tag](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/oneBlue.jpg?raw=true)  | add to the score |
-| ![alt tag](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/oneRed.jpg?raw=true)  | substract from the score |
-| ![alt tag](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/multiplyBlue.jpg?raw=true)  | score is multiplied with the next number |
-| ![alt tag](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/divideRed.jpg?raw=true)  | score is divided with the next number |
-| ![alt tag](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/zeroGreen.jpg?raw=true)  | speed of numbers is lowered |
+| ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/oneBlue.jpg?raw=true)  | blue adds to the score |
+| ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/oneRed.jpg?raw=true)  | red substracts from the score |
+| ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/multiplyBlue.jpg?raw=true)  | score is multiplied with the next number |
+| ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/divideRed.jpg?raw=true)  | score is divided with the next number |
+| ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/zeroGreen.jpg?raw=true)  | speed of numbers is lowered |
  
 
 ## Screenshots
+
+<img src="https://github.com/GalinStoychev/TeamBacardi/blob/master/images/others/frontPage.jpg?raw=true" width="240"/>
+<img src="https://github.com/GalinStoychev/TeamBacardi/blob/master/images/others/gamePage.jpg?raw=true" width="240"/>
+<img src="https://github.com/GalinStoychev/TeamBacardi/blob/master/images/others/bestScore.jpg?raw=true" width="240"/>
+
 
 ## Controls
 
