@@ -10,7 +10,7 @@ It is a game of magic and lectors. By magic, we mean calculations because they a
 |   sign |   action   |
 |-------------------------------------------------------------|------------------|
 | ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/oneBlue.jpg?raw=true)  | blue adds to the score |
-| ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/oneRed.jpg?raw=true)  | red substracts from the score |
+| ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/oneRed.jpg?raw=true)  | red subtracts from the score |
 | ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/multiplyBlue.jpg?raw=true)  | score is multiplied with the next number |
 | ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/divideRed.jpg?raw=true)  | score is divided with the next number |
 | ![](https://github.com/GalinStoychev/TeamBacardi/blob/master/images/signs/zeroGreen.jpg?raw=true)  | speed of numbers is lowered |
