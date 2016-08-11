@@ -14,13 +14,13 @@ UI:
 
 // ------------
 - readme.md - explain game rulles 
-    - update rules for when a hero grabs a zero
-    - add screenshorts, link to video, and link to the project in the telerik system
+    - update rules for when a hero grabs a zero DONE!
+    - add screenshorts, link to video, and link to the project in the telerik system DONE!
 
 // ------------
-- make heroes specialties work
-- make if all numbers are red, they should disappear
+- make heroes specialties work DONE!
+- make if all numbers are red, they should disappear DONE!
 
 
 // ------------
-- create video // when the project is finished
+- create video // when the project is finished DONE!
