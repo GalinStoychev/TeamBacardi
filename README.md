@@ -20,7 +20,7 @@ It is a game of magic and lectors. By magic, we mean calculations because they a
 
 <img src="https://github.com/GalinStoychev/TeamBacardi/blob/master/images/others/frontPage.jpg?raw=true" width="240"/>
 <img src="https://github.com/GalinStoychev/TeamBacardi/blob/master/images/others/gamePage.jpg?raw=true" width="240"/>
-<img src="https://github.com/GalinStoychev/TeamBacardi/blob/master/images/others/bestScore.jpg?raw=true" width="240"/>
+<img src="https://github.com/GalinStoychev/TeamBacardi/blob/master/images/others/gameOver.jpg?raw=true" width="240"/>
 
 
 ## Controls
