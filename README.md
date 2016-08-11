@@ -44,3 +44,6 @@ It is a game of magic and lectors. By magic, we mean calculations because they a
 
 ## YouTube Video
 [YouTube](https://www.youtube.com/watch?v=GELwiYoPrK4&feature=youtu.be)
+
+## Telerik Academy's Showcase System
+[Showcase System](http://best.telerikacademy.com/projects/307/CalcuLectors)
